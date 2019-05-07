@@ -4,6 +4,7 @@ import Logo from './logo_GameOfCodes.svg';
 import LogoAdalab from './logo-adalab-80px.png';
 import LogoHome from './Components/LogoHome';
 import TitleHome from './Components/TitleHome';
+import IconsHome from './Components/IconsHome';
 
 class Home extends React.Component {
   render() {
@@ -13,9 +14,8 @@ class Home extends React.Component {
           <header className="home__header">
             <div className="home__wrapper home__header-wrapper">
               <LogoHome
-                className="home__header-image"
-                src={Logo}
-                alt="Awesome profile cards logo"
+              src={Logo}
+              alt="Awesome profile cards logo"
               />
             </div>
           </header>
@@ -25,20 +25,11 @@ class Home extends React.Component {
               title="Crea tu tarjeta de visita"
               subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
               />
-              <ul className="home__list">
-                <li className="home__list-item">
-                  <i className="home__list-image far fa-object-ungroup" />
-                  <p className="home__list-text">Diseña</p>
-                </li>
-                <li className="home__list-item">
-                  <i className="home__list-image far fa-keyboard" />
-                  <p className="home__list-text">Rellena</p>
-                </li>
-                <li className="home__list-item">
-                  <i className="home__list-image fas fa-share-alt" />
-                  <p className="home__list-text">Comparte</p>
-                </li>
-              </ul>
+              <IconsHome 
+              design="Diseña"
+              fill="Rellena"
+              share="Comparte"
+              />
               <a className="home__button" href="card.html">
                 <span className="home__button-text">Comenzar</span>
               </a>
