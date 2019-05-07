@@ -3,6 +3,7 @@ import './App.css';
 import Logo from './logo_GameOfCodes.svg';
 import LogoAdalab from './logo-adalab-80px.png';
 import LogoHome from './Components/LogoHome';
+import TitleHome from './Components/TitleHome';
 
 class Home extends React.Component {
   render() {
@@ -20,10 +21,10 @@ class Home extends React.Component {
           </header>
           <main className="home">
             <div className="home__wrapper home__main-wrapper">
-              <h1 className="home__title">Crea tu tarjeta de visita</h1>
-              <h2 className="home__subtitle">
-                Crea mejores contactos profesionales de forma fácil y cómoda
-              </h2>
+              <TitleHome
+              title="Crea tu tarjeta de visita"
+              subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
+              />
               <ul className="home__list">
                 <li className="home__list-item">
                   <i className="home__list-image far fa-object-ungroup" />
