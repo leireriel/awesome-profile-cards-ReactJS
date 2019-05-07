@@ -5,6 +5,7 @@ import LogoAdalab from './logo-adalab-80px.png';
 import LogoHome from './Components/LogoHome';
 import TitleHome from './Components/TitleHome';
 import IconsHome from './Components/IconsHome';
+import ButtonHome from './Components/ButtonHome';
 
 class Home extends React.Component {
   render() {
@@ -30,9 +31,9 @@ class Home extends React.Component {
               fill="Rellena"
               share="Comparte"
               />
-              <a className="home__button" href="card.html">
-                <span className="home__button-text">Comenzar</span>
-              </a>
+              <ButtonHome 
+              button="Comenzar"
+              />
             </div>
           </main>
         </div>
