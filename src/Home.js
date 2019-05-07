@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Logo from './logo_GameOfCodes.svg';
 import LogoAdalab from './logo-adalab-80px.png';
+import LogoHome from './Components/LogoHome';
 
 class Home extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Home extends React.Component {
         <div className="home__container2">
           <header className="home__header">
             <div className="home__wrapper home__header-wrapper">
-              <img
+              <LogoHome
                 className="home__header-image"
                 src={Logo}
                 alt="Awesome profile cards logo"
