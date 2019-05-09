@@ -20,10 +20,7 @@ class Card extends React.Component{
         </header>
         <main className="main__card">
           <div className="wrapper main__card-wrapper">
-            <form
-            action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/"
-            method="post"
-            className="card__section1"/>
+            <form action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/" method="post" className="card__section1">
               <fieldset className="design js-container">
                 <legend className="hide">Sección de diseña</legend>
                 <div className="design__container__title js-container-title">
@@ -264,7 +261,9 @@ class Card extends React.Component{
                     </a>
                   </li>
                   <li className="sm github hidden">
-                    <a className="sm-link sm-link-github" href="">
+                    <a
+                    className="sm-link sm-link-github"
+                    href="">
                       <i className="fab fa-github-alt"></i>
                       <span className="access">contactar por github</span>
                     </a>
