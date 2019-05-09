@@ -101,175 +101,186 @@ class Card extends React.Component{
                     <i className="fas fa-chevron-up fill__img-arrow"></i>
                   </div>
                 </div>
-                  <div className="fill__form js-container-panel">
-                      <div className="form__container-name">
-                          <label
-                          className="form_title"
-                          for="name">Nombre completo *
-                          </label>
-                          <input
-                          className="form_field"
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Ej: Sally Jill"
-                          required/>
-                      </div>
-                      <div className="form__container-job">
-                          <label
-                          className="form_title"
-                          for="job">Puesto *
-                          </label>
-                          <input
-                          className="form_field"
-                          type="text"
-                          name="job"
-                          id="job"
-                          placeholder="Ej: Front-end unicorn"
-                          required/>
-                      </div>
-                      <div className="form__container-photo">
-                          <label
-                          className="form_title-photo"
-                          for="photo">Imagen de perfil *
-                          </label>
-                          <input
-                          className="form_field-photo js__profile-upload-btn"
-                          type="file"
-                          name="photo"
-                          id="photo" required/>
-                          <div className="form__container-btn">
-                              <button
-                              type="button"
-                              className="form__btn js__profile-trigger">Añadir imagen
-                              </button>
-                              <div className="form__photo-preview js__profile-preview"></div>
-                          </div>
-                      </div>
-                      <div className="form__container-email">
-                          <label
-                          className="form_title"
-                          for="email">Email *
-                          </label>
-                          <input
-                          className="form_field"
-                          type="email"
-                          name="email"
-                          id="email"
-                          placeholder="Ej: sally-hill@gmail.com"
-                          required/>
-                      </div>
-                      <div className="form__container-phone">
-                          <label
-                          className="form_title"
-                          for="phone">Teléfono
-                          </label>
-                          <input
-                          className="form_field"
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          placeholder="Ej: 555-55-55-55"/>
-                      </div>
-                      <div className="form__container-linkedin">
-                          <label
-                          className="form_title"
-                          for="linkedin">Linkedin *
-                          </label>
-                          <input
-                          className="form_field"
-                          type="text"
-                          name="linkedin"
-                          id="linkedin"
-                          placeholder="Ej: linkedin.com/in/sally.hill"
-                          required/>
-                      </div>
-                      <div className="form__container-github">
-                          <label
-                          className="form_title"
-                          for="github">Github *
-                          </label>
-                          <input
-                          className="form_field"
-                          type="text"
-                          name="github"
-                          id="github"
-                          placeholder="Ej: sally-hill"
-                          required/>
-                      </div>
+                <div className="fill__form js-container-panel">
+                  <div className="form__container-name">
+                    <label
+                    className="form_title"
+                    for="name">Nombre completo *
+                    </label>
+                    <input
+                    className="form_field"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Ej: Sally Jill"
+                    required/>
                   </div>
+                  <div className="form__container-job">
+                    <label
+                    className="form_title"
+                    for="job">Puesto *
+                    </label>
+                    <input
+                    className="form_field"
+                    type="text"
+                    name="job"
+                    id="job"
+                    placeholder="Ej: Front-end unicorn"
+                    required/>
+                  </div>
+                  <div className="form__container-photo">
+                    <label
+                    className="form_title-photo"
+                    for="photo">Imagen de perfil *
+                    </label>
+                    <input
+                    className="form_field-photo js__profile-upload-btn"
+                    type="file"
+                    name="photo"
+                    id="photo" required/>
+                    <div className="form__container-btn">
+                      <button
+                      type="button"
+                      className="form__btn js__profile-trigger">Añadir imagen
+                      </button>
+                      <div className="form__photo-preview js__profile-preview"></div>
+                    </div>
+                  </div>
+                  <div className="form__container-email">
+                    <label
+                    className="form_title"
+                    for="email">Email *
+                    </label>
+                    <input
+                    className="form_field"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Ej: sally-hill@gmail.com"
+                    required/>
+                  </div>
+                  <div className="form__container-phone">
+                    <label
+                    className="form_title"
+                    for="phone">Teléfono
+                    </label>
+                    <input
+                    className="form_field"
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="Ej: 555-55-55-55"/>
+                  </div>
+                  <div className="form__container-linkedin">
+                    <label
+                    className="form_title"
+                    for="linkedin">Linkedin *
+                    </label>
+                    <input
+                    className="form_field"
+                    type="text"
+                    name="linkedin"
+                    id="linkedin"
+                    placeholder="Ej: linkedin.com/in/sally.hill"
+                    required/>
+                  </div>
+                  <div className="form__container-github">
+                    <label
+                    className="form_title"
+                    for="github">Github *
+                    </label>
+                    <input
+                    className="form_field"
+                    type="text"
+                    name="github"
+                    id="github"
+                    placeholder="Ej: sally-hill"
+                    required/>
+                  </div>
+                </div>
               </fieldset>
-                <fieldset className="share__section">
-                    <legend className="hide">Sección de compartir</legend>
-                    <div className="share__section js-container js-container-hidden">
-                        <div className="share__card js-container-title">
-                            <p className="share__title">
-                                <i className="share__icon fas fa-share-alt"></i>comparte
-                            </p>
-                            <div className="arrow-wrapper container-arrow">
-                                <i className="fas fa-chevron-up"></i>
-                            </div>
-                        </div>
-                        <div className="share__btn--wrapper js-container-panel">
-                            <button
-                            type="submit"
-                            className="share__btn--create">
-                                <i className="far fa-address-card"></i>Crear tarjeta
-                            </button>
-                        </div>
+              <fieldset className="share__section">
+                <legend className="hide">Sección de compartir</legend>
+                <div className="share__section js-container js-container-hidden">
+                  <div className="share__card js-container-title">
+                    <p className="share__title">
+                      <i className="share__icon fas fa-share-alt"></i>comparte
+                    </p>
+                    <div className="arrow-wrapper container-arrow">
+                      <i className="fas fa-chevron-up"></i>
                     </div>
-                    <div className="share__info--wrapper hidden">
-                        <p className="share__paragraph">La tarjeta ha sido creada:</p>
-                        <a className="share__link--cards link" href=""></a>
-                        <a href="" className="share__btn--twitter link">
-                            <i className="fab fa-twitter"></i>Compartir en twitter
-                        </a>
-                    </div>
-                </fieldset>
+                  </div>
+                  <div className="share__btn--wrapper js-container-panel">
+                    <button
+                    type="submit"
+                    className="share__btn--create">
+                      <i className="far fa-address-card"></i>Crear tarjeta
+                    </button>
+                  </div>
+                </div>
+                <div className="share__info--wrapper hidden">
+                  <p className="share__paragraph">La tarjeta ha sido creada:</p>
+                  <a className="share__link--cards link" href=""></a>
+                  <a href="" className="share__btn--twitter link">
+                    <i className="fab fa-twitter"></i>Compartir en twitter
+                  </a>
+                </div>
+              </fieldset>
             </form>
-              <section className="preview">
-                    <div className="preview__card">
-                        <div className="preview__card--top">
-                            <button type="reset" className="preview__reset">
-                                <p className="preview__trash"><i className="far fa-trash-alt"></i> reset</p>
-                            </button>
-                            <div className="preview__card--text">
-                                <h2 className="preview--h2">nombre apellido</h2>
-                                <h3 className="preview--h3">front-end developer</h3>
-                            </div>
-                        </div>
-                          <UserProfile />
-                            <img className="image-access" src="" alt="tu foto"/>
-                        </div>
-                        <div className="preview__card--bottom">
-                            <ul className="preview__card--sm">
-                                <li className="sm mail hidden"> <a className="sm-link sm-link-mail" href=""><i className="far fa-envelope"></i><span
-                            className="access">contactar por
-                            email</span></a
-                                </li>
-                                <li className="sm telephone hidden"> <a className="sm-link sm-link-telephone" href=""><i className="fas fa-mobile-alt"></i><span
-                            className="access">contactar por
-                            teléfono</span></a
-                                </li>
-                                <li className="sm linkedin hidden"> <a className="sm-link sm-link-linkedin" href=""><i className="fab fa-linkedin-in"></i><span
-                            className="access">contactar por
-                            linkedin</span></a
-                                </li>
-                                <li className="sm github hidden"> <a className="sm-link sm-link-github" href=""><i className="fab fa-github-alt"></i><span
-                            className="access">contactar por
-                            github</span></a
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+            <section className="preview">
+              <div className="preview__card">
+                <div className="preview__card--top">
+                  <button type="reset" className="preview__reset">
+                    <p className="preview__trash">
+                      <i className="far fa-trash-alt"></i> reset
+                    </p>
+                  </button>
+                  <div className="preview__card--text">
+                    <h2 className="preview--h2">nombre apellido</h2>
+                    <h3 className="preview--h3">front-end developer</h3>
+                  </div>
+                </div>
+                <UserProfile />
+                <img className="image-access" src="" alt="tu foto"/>
+              </div>
+              <div className="preview__card--bottom">
+                <ul className="preview__card--sm">
+                  <li className="sm mail hidden">
+                    <a className="sm-link sm-link-mail" href="">
+                      <i className="far fa-envelope"></i>
+                      <span className="access">contactar por email</span>
+                    </a>
+                  </li>
+                  <li className="sm telephone hidden">
+                    <a className="sm-link sm-link-telephone" href="">
+                      <i className="fas fa-mobile-alt"></i>
+                      <span className="access">contactar por teléfono</span>
+                    </a>
+                  </li>
+                  <li className="sm linkedin hidden">
+                    <a className="sm-link sm-link-linkedin" href="">
+                      <i className="fab fa-linkedin-in"></i>
+                      <span className="access">contactar por linkedin</span>
+                    </a>
+                  </li>
+                  <li className="sm github hidden">
+                    <a className="sm-link sm-link-github" href="">
+                      <i className="fab fa-github-alt"></i>
+                      <span className="access">contactar por github</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </section>
           </div>
         </main>
         <footer className="card__footer">
-            <div className="wrapper card__footer-wrapper">
-                <p className="card__footer-copy">Awesome profile-cards &copy;2019</p> <a className="card__footer-link" target="_blank"
-                href="https://adalab.es/"><img className="card__footer-image" src="assets/images/logo-adalab-80px.png" alt="Ir al sitio web de Adalab"></a
-            </div>
+          <div className="wrapper card__footer-wrapper">
+            <p className="card__footer-copy">Awesome profile-cards &copy;2019</p>
+            <a className="card__footer-link" target="_blank" href="https://adalab.es/">
+              <img className="card__footer-image" src="assets/images/logo-adalab-80px.png" alt="Ir al sitio web de Adalab"/>
+            </a>
+          </div>
         </footer>
       </React.Fragment>
     );
