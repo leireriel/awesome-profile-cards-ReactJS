@@ -265,7 +265,9 @@ class Card extends React.Component{
                     </a>
                   </li>
                   <li className="sm github hidden">
-                    <a className="sm-link sm-link-github" href="">
+                    <a
+                    className="sm-link sm-link-github"
+                    href="">
                       <i className="fab fa-github-alt"></i>
                       <span className="access">contactar por github</span>
                     </a>
