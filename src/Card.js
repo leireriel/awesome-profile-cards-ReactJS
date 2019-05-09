@@ -244,8 +244,7 @@ class Card extends React.Component{
                 </div>
                 <UserProfile />
                 <img className="image-access" src="" alt="tu foto"/>
-              </div>
-              <div className="preview__card--bottom">
+                <div className="preview__card--bottom">
                 <ul className="preview__card--sm">
                   <li className="sm mail hidden">
                     <a className="sm-link sm-link-mail" href="">
@@ -272,6 +271,7 @@ class Card extends React.Component{
                     </a>
                   </li>
                 </ul>
+              </div>
               </div>
             </section>
           </div>
