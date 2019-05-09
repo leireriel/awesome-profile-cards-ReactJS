@@ -20,7 +20,10 @@ class Card extends React.Component{
         </header>
         <main className="main__card">
           <div className="wrapper main__card-wrapper">
-            <form action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/" method="post" className="card__section1">
+            <form
+            action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/"
+            method="post"
+            className="card__section1">
               <fieldset className="design js-container">
                 <legend className="hide">Sección de diseña</legend>
                 <div className="design__container__title js-container-title">
@@ -34,6 +37,7 @@ class Card extends React.Component{
                 </div>
                 <div className="design__container__form js-container-panel">
                   <h3 className="design__subtitle">COLORES</h3>
+                  <div>
                     <div className="design__form design__form-blue">
                       <label
                       className="hide"
@@ -86,6 +90,7 @@ class Card extends React.Component{
                       </ul>
                     </div>
                   </div>
+                </div>
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
                 <legend className="hide">Sección de rellena</legend>
