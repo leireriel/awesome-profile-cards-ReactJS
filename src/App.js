@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Home from './Home';
+// import Home from './Home';
 import Card from './Card';
 
 class App extends React.Component {
@@ -9,3 +9,4 @@ class App extends React.Component {
   }
 }
 export default App;
+
