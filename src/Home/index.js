@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import Logo from './logo_GameOfCodes.svg';
-import LogoAdalab from './logo-adalab-80px.png';
+import '../App.css';
+import Logo from '../Components/Images/logo_GameOfCodes.svg';
+import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
 import LogoHome from './Components/LogoHome';
 import TitleHome from './Components/TitleHome';
 import IconsHome from './Components/IconsHome';
@@ -26,12 +26,12 @@ class Home extends React.Component {
               title="Crea tu tarjeta de visita"
               subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
               />
-              <IconsHome 
+              <IconsHome
               design="Diseña"
               fill="Rellena"
               share="Comparte"
               />
-              <ButtonHome 
+              <ButtonHome
               button="Comenzar"
               />
             </div>

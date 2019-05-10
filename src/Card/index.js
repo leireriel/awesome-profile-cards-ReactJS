@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './logo_GameOfCodes.svg';
-import LogoAdalab from './logo-adalab-80px.png';
+import Logo from '../Components/Images/logo_GameOfCodes.svg';
+import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
 // import { ReactComponent } from '*.svg';
 import UserProfile from './Components/UserProfile';
 
