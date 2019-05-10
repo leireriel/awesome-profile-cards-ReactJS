@@ -86,6 +86,12 @@ body {
   align-items: center;
 }
 
+.home__container__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .home__title {
   width: 223px;
   height: 24px;
@@ -829,11 +835,11 @@ fieldset {
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .js-container-panel {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .container-arrow {
