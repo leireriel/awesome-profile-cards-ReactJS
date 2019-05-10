@@ -835,11 +835,11 @@ fieldset {
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .js-container-panel {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .container-arrow {
