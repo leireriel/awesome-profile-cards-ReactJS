@@ -3,6 +3,7 @@ import Logo from '../Components/Images/logo_GameOfCodes.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
 // import { ReactComponent } from '*.svg';
 import PreviewCard from './Components/PreviewCard';
+import Linkedin from './Components/Linkedin';
 
 class Card extends React.Component {
   render() {
@@ -205,19 +206,7 @@ class Card extends React.Component {
                       placeholder="Ej: 555-55-55-55"
                     />
                   </div>
-                  <div className="form__container-linkedin">
-                    <label className="form_title" for="linkedin">
-                      Linkedin *
-                    </label>
-                    <input
-                      className="form_field"
-                      type="text"
-                      name="linkedin"
-                      id="linkedin"
-                      placeholder="Ej: linkedin.com/in/sally.hill"
-                      required
-                    />
-                  </div>
+                  <Linkedin />
                   <div className="form__container-github">
                     <label className="form_title" for="github">
                       Github *
