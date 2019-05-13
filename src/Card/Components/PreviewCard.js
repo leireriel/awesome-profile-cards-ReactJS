@@ -18,8 +18,8 @@ class PreviewCard extends React.Component {
             </button>
             <div className="preview__card--text">
               <h2 className="preview--h2">
-              {name}</h2>
-              <h3 className="preview--h3">{job}</h3>
+              {name === '' ? "Nombre Apellidos" : name}</h2>
+              <h3 className="preview--h3">{job === '' ? "Front-end developer" : job}</h3>
             </div>
           </div>
           <UserProfile />
