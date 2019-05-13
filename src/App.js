@@ -7,33 +7,41 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Nombre apellido',
-      job: 'Front end',
-      email: '',
-      phone: '',
-      linkedin: '',
-      github: '',
-      photo: '',
-      palette: ''
+      userInfo: {
+        name: '',
+        job: '',
+        email: '',
+        phone: '',
+        linkedin: '',
+        github: '',
+        photo: '',
+        palette: 1
+      }
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    console.log(id);
-    this.setState({
-      [id]: value
+    this.setState((prevState, props) => {
+      const newUser = {...prevState.userInfo};
+      newUser[id] = value;
+      return {userInfo: newUser}
     });
-    console.log(value);
+
+    // const newUser = {...}
+    // console.log(id);
+    // this.setState({
+
+    // });
   }
 
   render() {
     return <Card
       action={this.handleInputChange}
-      userInfo={this.state} />;
+      userInfo={this.state.userInfo}
+      />;
   }
 }
 export default App;
