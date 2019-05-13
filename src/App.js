@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './scss/main.scss';
 // import Home from './Home/index';
 import Card from './Card/index';
 
@@ -25,9 +25,9 @@ class App extends React.Component {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState((prevState, props) => {
-      const newUser = {...prevState.userInfo};
+      const newUser = { ...prevState.userInfo };
       newUser[id] = value;
-      return {userInfo: newUser}
+      return { userInfo: newUser };
     });
 
     // const newUser = {...}
@@ -38,11 +38,9 @@ class App extends React.Component {
   }
 
   render() {
-    return <Card
-      action={this.handleInputChange}
-      userInfo={this.state.userInfo}
-      />;
+    return (
+      <Card action={this.handleInputChange} userInfo={this.state.userInfo} />
+    );
   }
 }
 export default App;
-

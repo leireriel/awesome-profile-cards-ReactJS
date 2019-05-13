@@ -2,11 +2,9 @@ import React from 'react';
 import UserProfile from './UserProfile';
 // const { name, job } = this.state;
 
-
 class PreviewCard extends React.Component {
-
   render() {
-    const {name, job, email, phone, linkedin, github} = this.props.userInfo;
+    const { name, job, email, phone, linkedin, github } = this.props.userInfo;
     return (
       <section className="preview">
         <div className="preview__card">
@@ -18,8 +16,11 @@ class PreviewCard extends React.Component {
             </button>
             <div className="preview__card--text">
               <h2 className="preview--h2">
-              {name === '' ? "Nombre Apellidos" : name}</h2>
-              <h3 className="preview--h3">{job === '' ? "Front-end developer" : job}</h3>
+                {name === '' ? 'Nombre Apellidos' : name}
+              </h2>
+              <h3 className="preview--h3">
+                {job === '' ? 'Front-end developer' : job}
+              </h3>
             </div>
           </div>
           <UserProfile />
@@ -27,25 +28,31 @@ class PreviewCard extends React.Component {
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
               <li className={`sm mail ${email === '' ? 'hidden' : ''}`}>
-                <a className="sm-link sm-link-mail" href={"mailto:" + email}>
+                <a className="sm-link sm-link-mail" href={'mailto:' + email}>
                   <i className="far fa-envelope" />
                   <span className="access">contactar por email</span>
                 </a>
               </li>
-              <li className="sm telephone hidden">
+              <li className={`sm telephone ${phone === '' ? 'hidden' : ''}`}>
                 <a className="sm-link sm-link-telephone" href={phone}>
                   <i className="fas fa-mobile-alt" />
                   <span className="access">contactar por teléfono</span>
                 </a>
               </li>
-              <li className="sm linkedin hidden">
-                <a className="sm-link sm-link-linkedin" href={"https://www.linkedin.com/in/" + linkedin}>
+              <li className={`sm linkedin ${linkedin === '' ? 'hidden' : ''}`}>
+                <a
+                  className="sm-link sm-link-linkedin"
+                  href={'https://www.linkedin.com/in/' + linkedin}
+                >
                   <i className="fab fa-linkedin-in" />
                   <span className="access">contactar por linkedin</span>
                 </a>
               </li>
-              <li className="sm github hidden">
-                <a className="sm-link sm-link-github" href={"https://github.com/" + github}>
+              <li className={`sm github ${github === '' ? 'hidden' : ''}`}>
+                <a
+                  className="sm-link sm-link-github"
+                  href={'https://github.com/' + github}
+                >
                   <i className="fab fa-github-alt" />
                   <span className="access">contactar por github</span>
                 </a>
