@@ -26,7 +26,7 @@ class PreviewCard extends React.Component {
           <img className="image-access" src="" alt="tu foto" />
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
-              <li className="sm mail hidden">
+              <li className={`sm mail ${email === '' ? 'hidden' : ''}`}>
                 <a className="sm-link sm-link-mail" href={"mailto:" + email}>
                   <i className="far fa-envelope" />
                   <span className="access">contactar por email</span>
