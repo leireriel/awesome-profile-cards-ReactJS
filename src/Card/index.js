@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Components/Images/logo_GameOfCodes.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
-// import { ReactComponent } from '*.svg';
+//import PreviewCard from './Components/PreviewCard';
 import UserProfile from './Components/UserProfile';
 import Design from './Components/Design';
 import Fill from './Components/Fill';
@@ -12,8 +12,8 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-      name: 'Nombre Apellido',
-      job: 'Front-end developer'
+      name: 'Nombre Apellido'
+      // job: 'Front-end developer'
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -21,8 +21,8 @@ class Card extends React.Component {
   handleInputChange(event) {
     const user = event.currentTarget.value;
     this.setState({
-      name: user,
-      job: user
+      name: user
+      // job: user
       // gitHub: gitHubName
     });
   }
@@ -68,7 +68,7 @@ class Card extends React.Component {
                   </button>
                   <div className="preview__card--text">
                     <h2 className="preview--h2">{this.state.name}</h2>
-                    <h3 className="preview--h3">{this.state.job}</h3>
+                    <h3 className="preview--h3">Front-end developer</h3>
                   </div>
                 </div>
                 <UserProfile />
