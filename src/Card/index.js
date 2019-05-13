@@ -52,6 +52,7 @@ class Card extends React.Component {
             <a
               className="card__footer-link"
               target="_blank"
+              rel="noopener noreferrer"
               href="https://adalab.es/"
             >
               <img

@@ -18,7 +18,7 @@ class Design extends React.Component {
             <h3 className="design__subtitle">COLORES</h3>
             <div>
               <div className="design__form design__form-blue">
-                <label className="hide" for="blue_palette">
+                <label className="hide" htmlFor="blue_palette">
                   blue palette
                 </label>
                 <input
@@ -44,7 +44,7 @@ class Design extends React.Component {
                 </ul>
               </div>
               <div className="design__form design__form-red">
-                <label className="hide" for="red_palette">
+                <label className="hide" htmlFor="red_palette">
                   Red palette
                 </label>
                 <input
@@ -70,7 +70,7 @@ class Design extends React.Component {
                 </ul>
               </div>
               <div className="design__form design__form-grey">
-                <label className="hide" for="grey_palette">
+                <label className="hide" htmlFor="grey_palette">
                   grey palette
                 </label>
                 <input
