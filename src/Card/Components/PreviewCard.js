@@ -27,7 +27,7 @@ class PreviewCard extends React.Component {
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
               <li className="sm mail hidden">
-                <a className="sm-link sm-link-mail" href={email}>
+                <a className="sm-link sm-link-mail" href={"mailto:" + email}>
                   <i className="far fa-envelope" />
                   <span className="access">contactar por email</span>
                 </a>
@@ -39,13 +39,13 @@ class PreviewCard extends React.Component {
                 </a>
               </li>
               <li className="sm linkedin hidden">
-                <a className="sm-link sm-link-linkedin" href={linkedin}>
+                <a className="sm-link sm-link-linkedin" href={"https://www.linkedin.com/in/" + linkedin}>
                   <i className="fab fa-linkedin-in" />
                   <span className="access">contactar por linkedin</span>
                 </a>
               </li>
               <li className="sm github hidden">
-                <a className="sm-link sm-link-github" href={github}>
+                <a className="sm-link sm-link-github" href={"https://github.com/" + github}>
                   <i className="fab fa-github-alt" />
                   <span className="access">contactar por github</span>
                 </a>
