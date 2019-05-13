@@ -1,13 +1,32 @@
 import React from 'react';
 import Logo from '../Components/Images/logo_GameOfCodes.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
-// import { ReactComponent } from '*.svg';
+//import PreviewCard from './Components/PreviewCard';
 import UserProfile from './Components/UserProfile';
 import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
 
 class Card extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: 'Nombre Apellido'
+      // job: 'Front-end developer'
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const user = event.currentTarget.value;
+    this.setState({
+      name: user
+      // job: user
+      // gitHub: gitHubName
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -33,7 +52,7 @@ class Card extends React.Component {
                 <Design />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill />
+                <Fill action={this.handleInputChange} />
               </fieldset>
               <fieldset className="share__section">
                 <Share />
@@ -48,8 +67,8 @@ class Card extends React.Component {
                     </p>
                   </button>
                   <div className="preview__card--text">
-                    <h2 className="preview--h2">nombre apellido</h2>
-                    <h3 className="preview--h3">front-end developer</h3>
+                    <h2 className="preview--h2">{this.state.name}</h2>
+                    <h3 className="preview--h3">Front-end developer</h3>
                   </div>
                 </div>
                 <UserProfile />
