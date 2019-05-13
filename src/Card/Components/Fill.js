@@ -40,7 +40,7 @@ class Fill extends React.Component {
               name="job"
               id="job"
               placeholder="Ej: Front-end unicorn"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>
@@ -72,6 +72,7 @@ class Fill extends React.Component {
               name="email"
               id="email"
               placeholder="Ej: sally-hill@gmail.com"
+              onChange={action}
               required
             />
           </div>
@@ -85,6 +86,7 @@ class Fill extends React.Component {
               name="phone"
               id="phone"
               placeholder="Ej: 555-55-55-55"
+              onChange={action}
             />
           </div>
           <div className="form__container-linkedin">
@@ -97,6 +99,7 @@ class Fill extends React.Component {
               name="linkedin"
               id="linkedin"
               placeholder="Ej: linkedin.com/in/sally.hill"
+              onChange={action}
               required
             />
           </div>
@@ -110,7 +113,7 @@ class Fill extends React.Component {
               name="github"
               id="github"
               placeholder="Ej: sally-hill"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>

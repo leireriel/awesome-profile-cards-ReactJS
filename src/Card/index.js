@@ -7,34 +7,10 @@ import Fill from './Components/Fill';
 import Share from './Components/Share';
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      name: 'Nombre Apellido',
-      job: 'Front-end developer',
-      email: '',
-      phone: '',
-      linkedin: '',
-      github: '',
-      photo: '',
-      palette: ''
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(event) {
-    const user = event.currentTarget.value;
-    const id = event.currentTarget.id;
-    console.log(id);
-    this.setState({
-      [id]: user
-      // job: user
-      // gitHub: gitHubName
-    });
-  }
 
   render() {
+    const {action, userInfo} = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -59,13 +35,13 @@ class Card extends React.Component {
                 <Design />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill action={this.handleInputChange} />
+                <Fill action={action} />
               </fieldset>
               <fieldset className="share__section">
                 <Share />
               </fieldset>
             </form>
-            <PreviewCard action={this.handleInputChange} name={this.state} />
+            <PreviewCard action={action} userInfo={userInfo} />
           </div>
         </main>
         <footer className="card__footer">
