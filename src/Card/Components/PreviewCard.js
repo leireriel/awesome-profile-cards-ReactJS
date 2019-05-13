@@ -43,6 +43,8 @@ class PreviewCard extends React.Component {
                 <a
                   className="sm-link sm-link-linkedin"
                   href={'https://www.linkedin.com/in/' + linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-linkedin-in" />
                   <span className="access">contactar por linkedin</span>
@@ -52,6 +54,8 @@ class PreviewCard extends React.Component {
                 <a
                   className="sm-link sm-link-github"
                   href={'https://github.com/' + github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-github-alt" />
                   <span className="access">contactar por github</span>
