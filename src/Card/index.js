@@ -1,8 +1,7 @@
 import React from 'react';
 import Logo from '../Components/Images/logo_GameOfCodes.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
-//import PreviewCard from './Components/PreviewCard';
-import UserProfile from './Components/UserProfile';
+import PreviewCard from './Components/PreviewCard';
 import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
@@ -12,8 +11,14 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-      name: 'Nombre Apellido'
-      // job: 'Front-end developer'
+      name: 'Nombre Apellido',
+      job: 'Front-end developer',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      photo: '',
+      palette: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -58,51 +63,10 @@ class Card extends React.Component {
                 <Share />
               </fieldset>
             </form>
-            <section className="preview">
-              <div className="preview__card">
-                <div className="preview__card--top">
-                  <button type="reset" className="preview__reset">
-                    <p className="preview__trash">
-                      <i className="far fa-trash-alt" /> reset
-                    </p>
-                  </button>
-                  <div className="preview__card--text">
-                    <h2 className="preview--h2">{this.state.name}</h2>
-                    <h3 className="preview--h3">Front-end developer</h3>
-                  </div>
-                </div>
-                <UserProfile />
-                <img className="image-access" src="" alt="tu foto" />
-                <div className="preview__card--bottom">
-                  <ul className="preview__card--sm">
-                    <li className="sm mail hidden">
-                      <a className="sm-link sm-link-mail" href="">
-                        <i className="far fa-envelope" />
-                        <span className="access">contactar por email</span>
-                      </a>
-                    </li>
-                    <li className="sm telephone hidden">
-                      <a className="sm-link sm-link-telephone" href="">
-                        <i className="fas fa-mobile-alt" />
-                        <span className="access">contactar por teléfono</span>
-                      </a>
-                    </li>
-                    <li className="sm linkedin hidden">
-                      <a className="sm-link sm-link-linkedin" href="">
-                        <i className="fab fa-linkedin-in" />
-                        <span className="access">contactar por linkedin</span>
-                      </a>
-                    </li>
-                    <li className="sm github hidden">
-                      <a className="sm-link sm-link-github" href="">
-                        <i className="fab fa-github-alt" />
-                        <span className="access">contactar por github</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+            <PreviewCard
+              action={this.handleInputChange}
+              name={this.state.name}
+            />
           </div>
         </main>
         <footer className="card__footer">

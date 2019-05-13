@@ -3,6 +3,7 @@ import UserProfile from './UserProfile';
 
 class PreviewCard extends React.Component {
   render() {
+    const { name } = this.props;
     return (
       <section className="preview">
         <div className="preview__card">
@@ -13,7 +14,7 @@ class PreviewCard extends React.Component {
               </p>
             </button>
             <div className="preview__card--text">
-              <h2 className="preview--h2">nombre apellido</h2>
+              <h2 className="preview--h2">{name}</h2>
               <h3 className="preview--h3">front-end developer</h3>
             </div>
           </div>

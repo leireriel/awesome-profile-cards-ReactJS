@@ -2,6 +2,7 @@ import React from 'react';
 
 class Fill extends React.Component {
   render() {
+    const { action } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -25,7 +26,7 @@ class Fill extends React.Component {
               name="name"
               id="name"
               placeholder="Ej: Sally Jill"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>
