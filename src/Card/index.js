@@ -25,8 +25,10 @@ class Card extends React.Component {
 
   handleInputChange(event) {
     const user = event.currentTarget.value;
+    const id = event.currentTarget.id;
+    console.log(id);
     this.setState({
-      name: user
+      [id]: user
       // job: user
       // gitHub: gitHubName
     });
@@ -63,10 +65,7 @@ class Card extends React.Component {
                 <Share />
               </fieldset>
             </form>
-            <PreviewCard
-              action={this.handleInputChange}
-              name={this.state.name}
-            />
+            <PreviewCard action={this.handleInputChange} name={this.state} />
           </div>
         </main>
         <footer className="card__footer">
