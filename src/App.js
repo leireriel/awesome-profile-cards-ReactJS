@@ -33,10 +33,9 @@ class App extends React.Component {
   }
 
   handlePalettes(event) {
-    const value = event.currentTarget.value;
-    console.log(value);
+    const value = parseInt(event.currentTarget.value);
     this.setState((prevState, props) => {
-      const newPalettes = {...prevState.userinfo, palette:value};
+      const newPalettes = {...prevState.userInfo, palette:value};
       return { userInfo: newPalettes }
     });
   }
