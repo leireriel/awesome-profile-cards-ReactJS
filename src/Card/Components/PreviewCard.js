@@ -4,12 +4,25 @@ import UserProfile from './UserProfile';
 
 class PreviewCard extends React.Component {
   render() {
-    const { name, job, email, phone, linkedin, github, palette } = this.props.userInfo;
+    const {
+      name,
+      job,
+      email,
+      phone,
+      linkedin,
+      github,
+      palette
+    } = this.props.userInfo;
+    const { reset } = this.props;
     return (
       <section className="preview">
-        <div className={`preview__card preview-${palette === 1 ? 'default' : palette=== 2 ? 'red' : 'grey'}`}>
+        <div
+          className={`preview__card preview-${
+            palette === 1 ? 'default' : palette === 2 ? 'red' : 'grey'
+          }`}
+        >
           <div className="preview__card--top">
-            <button type="reset" className="preview__reset">
+            <button type="reset" className="preview__reset" onClick={reset}>
               <p className="preview__trash">
                 <i className="far fa-trash-alt" /> reset
               </p>

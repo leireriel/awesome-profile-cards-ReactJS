@@ -2,7 +2,7 @@ import React from 'react';
 
 class Fill extends React.Component {
   render() {
-    const { action } = this.props;
+    const { action, userInfo } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -24,6 +24,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="name"
+              value={userInfo.name}
               id="name"
               placeholder="Ej: Sally Jill"
               onChange={action}
@@ -38,6 +39,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="job"
+              value={userInfo.job}
               id="job"
               placeholder="Ej: Front-end unicorn"
               onChange={action}
@@ -70,6 +72,7 @@ class Fill extends React.Component {
               className="form_field"
               type="email"
               name="email"
+              value={userInfo.email}
               id="email"
               placeholder="Ej: sally-hill@gmail.com"
               onChange={action}
@@ -84,6 +87,7 @@ class Fill extends React.Component {
               className="form_field"
               type="tel"
               name="phone"
+              value={userInfo.phone}
               id="phone"
               placeholder="Ej: 555-55-55-55"
               onChange={action}
@@ -97,6 +101,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="linkedin"
+              value={userInfo.linkedin}
               id="linkedin"
               placeholder="Ej: linkedin.com/in/sally.hill"
               onChange={action}
@@ -111,6 +116,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="github"
+              value={userInfo.github}
               id="github"
               placeholder="Ej: sally-hill"
               onChange={action}

@@ -16,10 +16,21 @@ class App extends React.Component {
         github: '',
         photo: '',
         palette: 1
+      },
+      userDefault: {
+        name: '',
+        job: '',
+        email: '',
+        phone: '',
+        linkedin: '',
+        github: '',
+        photo: '',
+        palette: 1
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleInputChange(event) {
@@ -35,8 +46,14 @@ class App extends React.Component {
   handlePalettes(event) {
     const value = parseInt(event.currentTarget.value);
     this.setState((prevState, props) => {
-      const newPalettes = {...prevState.userInfo, palette:value};
-      return { userInfo: newPalettes }
+      const newPalettes = { ...prevState.userInfo, palette: value };
+      return { userInfo: newPalettes };
+    });
+  }
+
+  handleReset() {
+    this.setState((prevState, props) => {
+      return { userInfo: this.state.userDefault };
     });
   }
 
@@ -47,6 +64,7 @@ class App extends React.Component {
         userInfo={this.state.userInfo}
         actionPalettes={this.handlePalettes}
         state={this.state}
+        reset={this.handleReset}
       />
     );
   }
