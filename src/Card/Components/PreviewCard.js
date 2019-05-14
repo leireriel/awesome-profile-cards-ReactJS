@@ -4,10 +4,10 @@ import UserProfile from './UserProfile';
 
 class PreviewCard extends React.Component {
   render() {
-    const { name, job, email, phone, linkedin, github } = this.props.userInfo;
+    const { name, job, email, phone, linkedin, github, palette } = this.props.userInfo;
     return (
       <section className="preview">
-        <div className="preview__card">
+        <div className={`preview__card preview-${palette === 1 ? 'default' : palette=== 2 ? 'red' : 'grey'}`}>
           <div className="preview__card--top">
             <button type="reset" className="preview__reset">
               <p className="preview__trash">

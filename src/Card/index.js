@@ -38,13 +38,18 @@ class Card extends React.Component {
                 />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill action={action} />
+                <Fill
+                  action={action}
+                />
               </fieldset>
               <fieldset className="share__section">
                 <Share />
               </fieldset>
             </form>
-            <PreviewCard action={action} userInfo={userInfo} />
+            <PreviewCard
+              action={action}
+              userInfo={userInfo}
+            />
           </div>
         </main>
         <footer className="card__footer">
