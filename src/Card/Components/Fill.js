@@ -2,6 +2,7 @@ import React from 'react';
 
 class Fill extends React.Component {
   render() {
+    const { action } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -16,7 +17,7 @@ class Fill extends React.Component {
         </div>
         <div className="fill__form js-container-panel">
           <div className="form__container-name">
-            <label className="form_title" for="name">
+            <label className="form_title" htmlFor="name">
               Nombre completo *
             </label>
             <input
@@ -25,12 +26,12 @@ class Fill extends React.Component {
               name="name"
               id="name"
               placeholder="Ej: Sally Jill"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>
           <div className="form__container-job">
-            <label className="form_title" for="job">
+            <label className="form_title" htmlFor="job">
               Puesto *
             </label>
             <input
@@ -39,12 +40,12 @@ class Fill extends React.Component {
               name="job"
               id="job"
               placeholder="Ej: Front-end unicorn"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>
           <div className="form__container-photo">
-            <label className="form_title-photo" for="photo">
+            <label className="form_title-photo" htmlFor="photo">
               Imagen de perfil *
             </label>
             <input
@@ -62,7 +63,7 @@ class Fill extends React.Component {
             </div>
           </div>
           <div className="form__container-email">
-            <label className="form_title" for="email">
+            <label className="form_title" htmlFor="email">
               Email *
             </label>
             <input
@@ -71,11 +72,12 @@ class Fill extends React.Component {
               name="email"
               id="email"
               placeholder="Ej: sally-hill@gmail.com"
+              onChange={action}
               required
             />
           </div>
           <div className="form__container-phone">
-            <label className="form_title" for="phone">
+            <label className="form_title" htmlFor="phone">
               Teléfono
             </label>
             <input
@@ -84,10 +86,11 @@ class Fill extends React.Component {
               name="phone"
               id="phone"
               placeholder="Ej: 555-55-55-55"
+              onChange={action}
             />
           </div>
           <div className="form__container-linkedin">
-            <label className="form_title" for="linkedin">
+            <label className="form_title" htmlFor="linkedin">
               Linkedin *
             </label>
             <input
@@ -96,11 +99,12 @@ class Fill extends React.Component {
               name="linkedin"
               id="linkedin"
               placeholder="Ej: linkedin.com/in/sally.hill"
+              onChange={action}
               required
             />
           </div>
           <div className="form__container-github">
-            <label className="form_title" for="github">
+            <label className="form_title" htmlFor="github">
               Github *
             </label>
             <input
@@ -109,7 +113,7 @@ class Fill extends React.Component {
               name="github"
               id="github"
               placeholder="Ej: sally-hill"
-              onChange={this.props.action}
+              onChange={action}
               required
             />
           </div>

@@ -2,6 +2,7 @@ import React from 'react';
 
 class Design extends React.Component {
   render(){
+    const {actionPalettes, state} = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -16,9 +17,10 @@ class Design extends React.Component {
           </div>
           <div className="design__container__form js-container-panel">
             <h3 className="design__subtitle">COLORES</h3>
-            <div>
-              <div className="design__form design__form-blue">
-                <label className="hide" for="blue_palette">
+            <ul className="desing__colors-list">
+              <li className="design__form design__form-blue">
+              {/* esta clase revisar */}
+                <label className="hide" htmlFor="blue_palette">
                   blue palette
                 </label>
                 <input
@@ -27,6 +29,8 @@ class Design extends React.Component {
                   value="1"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
+                  checked={state.userInfo.palette === 1}
                 />
                 <ul className="theme">
                   <li
@@ -42,9 +46,10 @@ class Design extends React.Component {
                     style={{ backgroundColor: '#a2deaf' }}
                   />
                 </ul>
-              </div>
-              <div className="design__form design__form-red">
-                <label className="hide" for="red_palette">
+              </li>
+              <li className="design__form design__form-red">
+              {/* revis */}
+                <label className="hide" htmlFor="red_palette">
                   Red palette
                 </label>
                 <input
@@ -53,6 +58,7 @@ class Design extends React.Component {
                   value="2"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
                 />
                 <ul className="theme">
                   <li
@@ -68,9 +74,10 @@ class Design extends React.Component {
                     style={{ backgroundColor: '#e95626' }}
                   />
                 </ul>
-              </div>
-              <div className="design__form design__form-grey">
-                <label className="hide" for="grey_palette">
+              </li>
+              <li className="design__form design__form-grey">
+              {/* revisar */}
+                <label className="hide" htmlFor="grey_palette">
                   grey palette
                 </label>
                 <input
@@ -79,6 +86,7 @@ class Design extends React.Component {
                   value="3"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
                 />
                 <ul className="theme">
                   <li
@@ -94,8 +102,8 @@ class Design extends React.Component {
                     style={{ backgroundColor: '#a0c0cf' }}
                   />
                 </ul>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
       </React.Fragment>
     );
