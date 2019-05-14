@@ -39,9 +39,15 @@ class App extends React.Component {
       return { userInfo: newPalettes }
     });
   }
+
   render() {
     return (
-      <Card action={this.handleInputChange} userInfo={this.state.userInfo} actionPalettes={this.handlePalettes}/>
+      <Card
+        action={this.handleInputChange}
+        userInfo={this.state.userInfo}
+        actionPalettes={this.handlePalettes}
+        state={this.state}
+      />
     );
   }
 }

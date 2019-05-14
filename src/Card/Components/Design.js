@@ -2,7 +2,7 @@ import React from 'react';
 
 class Design extends React.Component {
   render(){
-    const {actionPalettes} = this.props;
+    const {actionPalettes, state} = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -29,6 +29,7 @@ class Design extends React.Component {
                   name="palette"
                   className="radio_btn"
                   onChange={actionPalettes}
+                  checked={state.userInfo.palette === 1}
 
                 />
                 <ul className="theme">
