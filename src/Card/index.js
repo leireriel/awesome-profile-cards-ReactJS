@@ -7,10 +7,8 @@ import Fill from './Components/Fill';
 import Share from './Components/Share';
 
 class Card extends React.Component {
-
-
   render() {
-    const {action, userInfo, actionPalettes, state} = this.props;
+    const { action, userInfo, actionPalettes, state, reset } = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -32,24 +30,16 @@ class Card extends React.Component {
               className="card__section1"
             >
               <fieldset className="design js-container">
-                <Design
-                  actionPalettes={actionPalettes}
-                  state={state}
-                />
+                <Design actionPalettes={actionPalettes} state={state} />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill
-                  action={action}
-                />
+                <Fill action={action} userInfo={userInfo} />
               </fieldset>
               <fieldset className="share__section">
                 <Share />
               </fieldset>
             </form>
-            <PreviewCard
-              action={action}
-              userInfo={userInfo}
-            />
+            <PreviewCard action={action} userInfo={userInfo} reset={reset} />
           </div>
         </main>
         <footer className="card__footer">
