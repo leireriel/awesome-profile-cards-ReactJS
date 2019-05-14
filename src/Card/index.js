@@ -10,7 +10,7 @@ class Card extends React.Component {
 
 
   render() {
-    const {action, userInfo} = this.props;
+    const {action, userInfo, actionPalettes} = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -32,7 +32,7 @@ class Card extends React.Component {
               className="card__section1"
             >
               <fieldset className="design js-container">
-                <Design />
+                <Design actionPalettes={actionPalettes} />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
                 <Fill action={action} />

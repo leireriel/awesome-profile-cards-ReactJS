@@ -19,6 +19,7 @@ class App extends React.Component {
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handlePalettes = this.handlePalettes.bind(this);
   }
 
   handleInputChange(event) {
@@ -29,17 +30,19 @@ class App extends React.Component {
       newUser[id] = value;
       return { userInfo: newUser };
     });
-
-    // const newUser = {...}
-    // console.log(id);
-    // this.setState({
-
-    // });
   }
 
+  handlePalettes(event) {
+    const value = event.currentTarget.value;
+    console.log(value);
+    this.setState((prevState, props) => {
+      const newPalettes = {...prevState.userinfo, palette:value};
+      return { userInfo: newPalettes }
+    });
+  }
   render() {
     return (
-      <Card action={this.handleInputChange} userInfo={this.state.userInfo} />
+      <Card action={this.handleInputChange} userInfo={this.state.userInfo} actionPalettes={this.handlePalettes}/>
     );
   }
 }

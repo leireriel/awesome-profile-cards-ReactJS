@@ -2,6 +2,7 @@ import React from 'react';
 
 class Design extends React.Component {
   render(){
+    const {actionPalettes} = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -27,6 +28,8 @@ class Design extends React.Component {
                   value="1"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
+
                 />
                 <ul className="theme">
                   <li
@@ -53,6 +56,7 @@ class Design extends React.Component {
                   value="2"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
                 />
                 <ul className="theme">
                   <li
@@ -79,6 +83,7 @@ class Design extends React.Component {
                   value="3"
                   name="palette"
                   className="radio_btn"
+                  onChange={actionPalettes}
                 />
                 <ul className="theme">
                   <li
