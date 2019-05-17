@@ -1,8 +1,9 @@
 import React from 'react';
+import GetAvatar from './GetAvatar';
 
 class Share extends React.Component {
   render(){
-    const { state, collapse, share } = this.props;
+    const { state, collapse, share, avatar, updateAvatar, isAvatarDefault } = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de compartir</legend>
@@ -18,11 +19,16 @@ class Share extends React.Component {
               </div>
             </div>
             <div className={`share__btn--wrapper ${state.userInfo.isVisible === 'share' ? '' : 'js-container-panel'}`}>
-              <button type="submit" className="share__btn--create"
+              <GetAvatar
+              share={share}
+              avatar={avatar} updateAvatar={updateAvatar} isAvatarDefault={isAvatarDefault}
+              />
+              {/* <button type="submit" className="share__btn--create"
               onClick={share}>
                 <i className="far fa-address-card" />
                   Crear tarjeta
-              </button>
+              </button> */}
+
             </div>
           </div>
           <div className="share__info--wrapper hidden">

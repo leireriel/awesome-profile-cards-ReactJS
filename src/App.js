@@ -2,7 +2,8 @@ import React from 'react';
 import './scss/main.scss';
 // import Home from './Home/index';
 import Card from './Card/index';
-import {fetchCard}  from './services/CardService';
+import UserProfile from './Card/Components/UserProfile';
+// import {fetchCard}  from './services/CardService';
 
 
 class App extends React.Component {
@@ -18,7 +19,11 @@ class App extends React.Component {
         github: '',
         photo: '',
         palette: 1,
-        isVisible: 'design'
+        isVisible: 'design',
+        isAvatarDefault: true,
+        profile: {
+          avatar: <UserProfile/>
+        }
       },
       userDefault: {
         name: '',
@@ -29,7 +34,11 @@ class App extends React.Component {
         github: '',
         photo: '',
         palette: 1,
-        isVisible: 'design'
+        isVisible: 'design',
+        isAvatarDefault: true,
+        profile: {
+          avatar: <UserProfile/>
+        }
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -37,6 +46,8 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.fetchNewCard=this.fetchNewCard.bind(this);
+
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   handleInputChange(event) {
@@ -90,6 +101,16 @@ class App extends React.Component {
         })
   }
 
+  updateAvatar(img) {
+    const {profile} = this.state.userInfo;
+    this.setState(prevState => {
+      const newProfile = {...profile, avatar: img};
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      }
+    });
+  }
 
   render() {
     return (
@@ -101,6 +122,10 @@ class App extends React.Component {
         reset={this.handleReset}
         collapse={this.handleCollapsable}
         share={this.fetchNewCard}
+
+        avatar={this.state.userInfo.profile.avatar}
+        isAvatarDefault={this.state.userInfo.isAvatarDefault}
+        updateAvatar={this.updateAvatar}
       />
     );
   }

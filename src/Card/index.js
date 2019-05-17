@@ -6,9 +6,11 @@ import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
 
+
+
 class Card extends React.Component {
   render() {
-    const { action, userInfo, actionPalettes, state, reset, collapse, share } = this.props;
+    const { action, userInfo, actionPalettes, state, reset, collapse, share, avatar, updateAvatar, isAvatarDefault } = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -38,6 +40,9 @@ class Card extends React.Component {
               <fieldset className="share__section">
                 <Share state={state} collapse={collapse}
                 share={share}
+                avatar={avatar}
+                updateAvatar={updateAvatar}
+                isAvatarDefault={isAvatarDefault}
                 />
               </fieldset>
             </form>
