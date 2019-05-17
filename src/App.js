@@ -15,7 +15,8 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1
+        palette: 1,
+        isVisible: 'design'
       },
       userDefault: {
         name: '',
@@ -25,13 +26,27 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1
+        palette: 1,
+        isVisible: 'design'
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleCollapsable = this.handleCollapsable.bind(this);
+    this.saveData = this.saveData.bind(this);
   }
+
+
+  componentDidMount() {
+    const getItem= JSON.parse(localStorage.getItem('cardSaved'));
+    if(getItem !== null) {
+      this.setState({
+      userInfo: getItem
+      });
+    }
+  }
+
 
   handleInputChange(event) {
     const value = event.currentTarget.value;
@@ -39,6 +54,7 @@ class App extends React.Component {
     this.setState((prevState, props) => {
       const newUser = { ...prevState.userInfo };
       newUser[id] = value;
+      this.saveData(newUser);
       return { userInfo: newUser };
     });
   }
@@ -47,6 +63,7 @@ class App extends React.Component {
     const value = parseInt(event.currentTarget.value);
     this.setState((prevState, props) => {
       const newPalettes = { ...prevState.userInfo, palette: value };
+      this.saveData(newPalettes);
       return { userInfo: newPalettes };
     });
   }
@@ -57,6 +74,20 @@ class App extends React.Component {
     });
   }
 
+  handleCollapsable(e) {
+    const id = e.currentTarget.id;
+    this.setState((prevState, props) => {
+      const newId = {...prevState.userInfo, isVisible: id};
+      return {
+        userInfo: newId
+       };
+    });
+  }
+
+  saveData(obj) {
+    localStorage.setItem('cardSaved', JSON.stringify(obj))
+  }
+
   render() {
     return (
       <Card
@@ -65,8 +96,11 @@ class App extends React.Component {
         actionPalettes={this.handlePalettes}
         state={this.state}
         reset={this.handleReset}
+        collapse={this.handleCollapsable}
       />
     );
   }
 }
+
+
 export default App;

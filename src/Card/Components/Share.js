@@ -2,10 +2,13 @@ import React from 'react';
 
 class Share extends React.Component {
   render(){
+    const { state, collapse } = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de compartir</legend>
-          <div className="share__section js-container js-container-hidden">
+          <div
+            className="share__section js-container js-container-hidden" id="share"
+            onClick={collapse}>
             <div className="share__card js-container-title">
               <p className="share__title">
                 <i className="share__icon fas fa-share-alt" />          comparte
@@ -14,7 +17,7 @@ class Share extends React.Component {
                 <i className="fas fa-chevron-up" />
               </div>
             </div>
-            <div className="share__btn--wrapper js-container-panel">
+            <div className={`share__btn--wrapper ${state.userInfo.isVisible === 'share' ? '' : 'js-container-panel'}`}>
               <button type="submit" className="share__btn--create">
                 <i className="far fa-address-card" />
                   Crear tarjeta

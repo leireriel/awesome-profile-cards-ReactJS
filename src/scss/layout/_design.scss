@@ -1,6 +1,7 @@
 .theme__color {
   width: 30px;
   height: 25px;
+  
 }
 .design__form {
   display: flex;
@@ -26,6 +27,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .design__container__title1 {
@@ -35,13 +37,10 @@
 }
 
 .design__title {
-  flex-grow: 1;
-  padding-left: 5px;
-  margin: 0;
-  font-family: $font-default;
-  color: $color-dark-grey;
-  text-transform: uppercase;
-  @include form_desing_title;
+  margin-top: 0;
+  margin-left: 5px;
+  margin-bottom: 0;
+  @include form_desing_title
 }
 
 .design__icon {
@@ -51,7 +50,8 @@
 
 .design__subtitle {
   margin-top: 0;
-  @include form_design_subtitle;
+ @include form_design_subtitle; 
+  
 }
 
 .design__container__form {
@@ -63,6 +63,7 @@
 .design {
   font-family: $font-default;
   border-bottom: 1px solid lightgrey;
+  
 }
 
 .fa-chevron-up {

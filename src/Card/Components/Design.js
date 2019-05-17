@@ -2,20 +2,23 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
-    const { actionPalettes, state } = this.props;
+    const { actionPalettes, state, collapse } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
-        <div className="design__container__tijs-container-title">
+        <div
+          className="design__container__title js-container-title"
+          id="design"
+          onClick={collapse}>
           <div className="design__container__title1">
             <i className="design__icon far fa-object-ungroup" />
             <h2 className="design__title">DISEÑA</h2>
-            <div className="design__container__titcontainer-arrow">
+          </div>
+          <div className="design__container__title2 container-arrow">
               <i className="fas fa-chevron-up design__img-arrow" />
-            </div>
           </div>
         </div>
-        <div className="design__container__form js-container-panel">
+        <div className={`design__container__form ${state.userInfo.isVisible === 'design' ? '' : 'js-container-panel'}`} >
           <h3 className="design__subtitle">COLORES</h3>
           <ul className="desing__colors-list">
             <li className="design__form design__form-blue">
@@ -30,7 +33,7 @@ class Design extends React.Component {
                 name="palette"
                 className="radio_btn"
                 onChange={actionPalettes}
-                checked={state.userInfo.palette === 1}
+                
               />
               <ul className="theme">
                 <li
@@ -59,6 +62,7 @@ class Design extends React.Component {
                 name="palette"
                 className="radio_btn"
                 onChange={actionPalettes}
+                checked={state.userInfo.palette === 2}
               />
               <ul className="theme">
                 <li
@@ -87,6 +91,7 @@ class Design extends React.Component {
                 name="palette"
                 className="radio_btn"
                 onChange={actionPalettes}
+                checked={state.userInfo.palette === 3}
               />
               <ul className="theme">
                 <li
