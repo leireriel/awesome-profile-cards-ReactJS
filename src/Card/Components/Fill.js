@@ -2,11 +2,14 @@ import React from 'react';
 
 class Fill extends React.Component {
   render() {
-    const { action, userInfo } = this.props;
+    const { action, userInfo, state, collapse } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
-        <div className="fill__container-title js-container-title">
+        <div
+          className="fill__container-title js-container-title"
+          id="fill"
+          onClick={collapse}>
           <div className="fill__container_img-keyboard">
             <i className="far fa-keyboard fill__img-keyboard" />
           </div>
@@ -15,7 +18,7 @@ class Fill extends React.Component {
             <i className="fas fa-chevron-up fill__img-arrow" />
           </div>
         </div>
-        <div className="fill__form js-container-panel">
+        <div className={`fill__form ${state.userInfo.isVisible === 'fill' ? '' : 'js-container-panel'}`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *

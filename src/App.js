@@ -15,7 +15,8 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1
+        palette: 1,
+        isVisible: 'design'
       },
       userDefault: {
         name: '',
@@ -25,12 +26,14 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1
+        palette: 1,
+        isVisible: 'design'
       }
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleCollapsable = this.handleCollapsable.bind(this);
   }
 
   handleInputChange(event) {
@@ -57,6 +60,16 @@ class App extends React.Component {
     });
   }
 
+  handleCollapsable(e) {
+    const id = e.currentTarget.id;
+    this.setState((prevState, props) => {
+      const newId = {...prevState.userInfo, isVisible: id};
+      return {
+        userInfo: newId
+       };
+    });
+  }
+
   render() {
     return (
       <Card
@@ -65,6 +78,7 @@ class App extends React.Component {
         actionPalettes={this.handlePalettes}
         state={this.state}
         reset={this.handleReset}
+        collapse={this.handleCollapsable}
       />
     );
   }
