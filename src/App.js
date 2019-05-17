@@ -2,6 +2,8 @@ import React from 'react';
 import './scss/main.scss';
 // import Home from './Home/index';
 import Card from './Card/index';
+import {fetchCard}  from './services/CardService';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +36,7 @@ class App extends React.Component {
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
+    this.fetchNewCard=this.fetchNewCard.bind(this);
   }
 
   handleInputChange(event) {
@@ -70,6 +73,24 @@ class App extends React.Component {
     });
   }
 
+
+  fetchNewCard() {
+    const API = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+    fetch(API, {
+      method: 'POST',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state.userInfo)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        console.log(data.cardURL);
+        })
+  }
+
+
   render() {
     return (
       <Card
@@ -79,6 +100,7 @@ class App extends React.Component {
         state={this.state}
         reset={this.handleReset}
         collapse={this.handleCollapsable}
+        share={this.fetchNewCard}
       />
     );
   }
