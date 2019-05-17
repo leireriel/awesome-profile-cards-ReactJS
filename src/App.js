@@ -34,6 +34,7 @@ class App extends React.Component {
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
+    this.saveData = this.saveData.bind(this);
   }
 
   handleInputChange(event) {
@@ -42,6 +43,7 @@ class App extends React.Component {
     this.setState((prevState, props) => {
       const newUser = { ...prevState.userInfo };
       newUser[id] = value;
+      this.saveData(newUser);
       return { userInfo: newUser };
     });
   }
@@ -50,6 +52,7 @@ class App extends React.Component {
     const value = parseInt(event.currentTarget.value);
     this.setState((prevState, props) => {
       const newPalettes = { ...prevState.userInfo, palette: value };
+      this.saveData(newPalettes);
       return { userInfo: newPalettes };
     });
   }
@@ -70,6 +73,10 @@ class App extends React.Component {
     });
   }
 
+  saveData(obj) {
+    localStorage.setItem('cardSaved', JSON.stringify(obj))
+  }
+
   render() {
     return (
       <Card
@@ -83,4 +90,6 @@ class App extends React.Component {
     );
   }
 }
+
+
 export default App;
