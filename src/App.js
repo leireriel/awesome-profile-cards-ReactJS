@@ -40,12 +40,11 @@ class App extends React.Component {
 
   componentDidMount() {
     const getItem= JSON.parse(localStorage.getItem('cardSaved'));
-    if(getItem === null) {
-      console.log('estoy vacío');
-    } else {
-      console.log('ESTOY LLENO');
+    if(getItem !== null) {
+      this.setState({
+      userInfo: getItem
+      });
     }
-
   }
 
 
