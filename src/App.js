@@ -37,6 +37,18 @@ class App extends React.Component {
     this.saveData = this.saveData.bind(this);
   }
 
+
+  componentDidMount() {
+    const getItem= JSON.parse(localStorage.getItem('cardSaved'));
+    if(getItem === null) {
+      console.log('estoy vacío');
+    } else {
+      console.log('ESTOY LLENO');
+    }
+
+  }
+
+
   handleInputChange(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
