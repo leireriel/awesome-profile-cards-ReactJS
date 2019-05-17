@@ -86,6 +86,12 @@ body {
   align-items: center;
 }
 
+.home__container__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .home__title {
   width: 223px;
   height: 24px;
@@ -146,7 +152,8 @@ body {
   text-align: center;
   color: #54585a;
   font-size: 13px;
-}/*Button*/.home__button {
+} /*Button*/
+.home__button {
   margin: 60px 0;
 }
 
@@ -157,7 +164,8 @@ body {
   font-size: 16px;
   text-transform: uppercase;
   text-align: center;
-}/*tablet*/.main__footer {
+} /*tablet*/
+.main__footer {
   background: #ffffff;
   border-top: solid 1px #d8d8d8;
 }
@@ -732,6 +740,7 @@ fieldset {
   position: absolute;
   top: 10px;
   left: 20px;
+  display: none;
 }
 
 .sm {
@@ -829,11 +838,11 @@ fieldset {
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .js-container-panel {
-  display: none;
+  /* display: none; */
 }
 
 .js-container-hidden .container-arrow {
@@ -1014,4 +1023,3 @@ fieldset {
     margin: 0 0 31px 0;
   }
 }
-
