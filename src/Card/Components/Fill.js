@@ -3,7 +3,7 @@ import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const { action, userInfo, state, collapse, updateAvatar } = this.props;
+    const { action, userInfo, state, collapse, updateAvatar, isVisible } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -19,7 +19,7 @@ class Fill extends React.Component {
             <i className="fas fa-chevron-up fill__img-arrow" />
           </div>
         </div>
-        <div className={`fill__form ${state.userInfo.isVisible === 'fill' ? '' : 'js-container-panel'}`}>
+        <div className={`fill__form ${isVisible === 'fill' ? '' : 'js-container-panel'}`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *

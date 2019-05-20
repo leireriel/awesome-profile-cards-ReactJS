@@ -6,6 +6,7 @@ import LogoHome from './Components/LogoHome';
 import TitleHome from './Components/TitleHome';
 import IconsHome from './Components/IconsHome';
 import ButtonHome from './Components/ButtonHome';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   render() {
@@ -15,25 +16,27 @@ class Home extends React.Component {
           <header className="home__header">
             <div className="home__wrapper home__header-wrapper">
               <LogoHome
-              src={Logo}
-              alt="Awesome profile cards logo"
+                src={Logo}
+                alt="Awesome profile cards logo"
               />
             </div>
           </header>
           <main className="home">
             <div className="home__wrapper home__main-wrapper">
               <TitleHome
-              title="Crea tu tarjeta de visita"
-              subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
+                title="Crea tu tarjeta de visita"
+                subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
               />
               <IconsHome
-              design="Diseña"
-              fill="Rellena"
-              share="Comparte"
+                design="Diseña"
+                fill="Rellena"
+                share="Comparte"
               />
-              <ButtonHome
-              button="Comenzar"
-              />
+              <Link to="/card">
+                <ButtonHome
+                  button="Comenzar"
+                />
+              </Link>
             </div>
           </main>
         </div>
@@ -56,7 +59,7 @@ class Home extends React.Component {
             </a>
           </div>
         </footer>
-      </div>
+      </div >
     );
     return landing;
   }

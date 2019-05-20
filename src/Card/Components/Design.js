@@ -2,7 +2,7 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
-    const { actionPalettes, state, collapse } = this.props;
+    const { actionPalettes, state, collapse, isVisible } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -18,7 +18,7 @@ class Design extends React.Component {
               <i className="fas fa-chevron-up design__img-arrow" />
           </div>
         </div>
-        <div className={`design__container__form ${state.userInfo.isVisible === 'design' ? '' : 'js-container-panel'}`} >
+        <div className={`design__container__form ${isVisible === 'design' ? '' : 'js-container-panel'}`} >
           <h3 className="design__subtitle">COLORES</h3>
           <ul className="desing__colors-list">
             <li className="design__form design__form-blue">

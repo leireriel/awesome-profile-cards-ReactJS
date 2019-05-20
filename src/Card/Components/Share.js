@@ -3,7 +3,7 @@ import GetAvatar from './GetAvatar';
 
 class Share extends React.Component {
   render(){
-    const { state, collapse, share, avatar, updateAvatar, isAvatarDefault } = this.props;
+    const { state, collapse, share, avatar, updateAvatar, isAvatarDefault, isVisible } = this.props;
     return(
       <React.Fragment>
         <legend className="hide">Sección de compartir</legend>
@@ -18,7 +18,7 @@ class Share extends React.Component {
                 <i className="fas fa-chevron-up" />
               </div>
             </div>
-            <div className={`share__btn--wrapper ${state.userInfo.isVisible === 'share' ? '' : 'js-container-panel'}`}>
+            <div className={`share__btn--wrapper ${isVisible === 'share' ? '' : 'js-container-panel'}`}>
               <GetAvatar
               share={share}
               avatar={avatar} updateAvatar={updateAvatar} isAvatarDefault={isAvatarDefault}

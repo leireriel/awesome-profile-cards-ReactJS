@@ -1,9 +1,10 @@
 import React from 'react';
 import './scss/main.scss';
-// import Home from './Home/index';
+import Home from './Home/index';
 import Card from './Card/index';
 import UserProfile from './Card/Components/UserProfile';
 // import {fetchCard}  from './services/CardService';
+import { Route, Switch } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -18,12 +19,7 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1,
-        isVisible: 'design',
-        isAvatarDefault: true,
-        profile: {
-          avatar: <UserProfile/>
-        }
+        palette: 1
       },
       userDefault: {
         name: '',
@@ -33,19 +29,16 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         photo: '',
-        palette: 1,
-        isVisible: 'design',
-        isAvatarDefault: true,
-        profile: {
-          avatar: <UserProfile/>
-        }
-      }
+        palette: 1
+      },
+      isVisible: 'design',
+      isAvatarDefault: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
-    this.fetchNewCard=this.fetchNewCard.bind(this);
+    this.fetchNewCard = this.fetchNewCard.bind(this);
 
     this.updateAvatar = this.updateAvatar.bind(this);
   }
@@ -77,10 +70,10 @@ class App extends React.Component {
   handleCollapsable(e) {
     const id = e.currentTarget.id;
     this.setState((prevState, props) => {
-      const newId = {...prevState.userInfo, isVisible: id};
+      const newId = { ...prevState.userInfo, isVisible: id };
       return {
         userInfo: newId
-       };
+      };
     });
   }
 
@@ -98,13 +91,13 @@ class App extends React.Component {
       .then(data => {
         console.log(data);
         console.log(data.cardURL);
-        })
+      })
   }
 
   updateAvatar(img) {
-    const {profile} = this.state.userInfo;
+    const { profile } = this.state.userInfo;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = { ...profile, avatar: img };
       return {
         profile: newProfile,
         isAvatarDefault: false
@@ -114,19 +107,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <Card
-        action={this.handleInputChange}
-        userInfo={this.state.userInfo}
-        actionPalettes={this.handlePalettes}
-        state={this.state}
-        reset={this.handleReset}
-        collapse={this.handleCollapsable}
-        share={this.fetchNewCard}
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/card" component={Card} />
+        <Home />
+        <Card
+          action={this.handleInputChange}
+          userInfo={this.state.userInfo}
+          isVisible={this.state.isVisible}
+          actionPalettes={this.handlePalettes}
+          state={this.state}
+          reset={this.handleReset}
+          collapse={this.handleCollapsable}
+          share={this.fetchNewCard}
 
-        avatar={this.state.userInfo.profile.avatar}
-        isAvatarDefault={this.state.userInfo.isAvatarDefault}
-        updateAvatar={this.updateAvatar}
-      />
+          avatar={this.state.userInfo.photo}
+          isAvatarDefault={this.state.isAvatarDefault}
+          updateAvatar={this.updateAvatar}
+        />
+      </Switch>
     );
   }
 }

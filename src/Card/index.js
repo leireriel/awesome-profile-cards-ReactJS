@@ -10,7 +10,7 @@ import Share from './Components/Share';
 
 class Card extends React.Component {
   render() {
-    const { action, userInfo, actionPalettes, state, reset, collapse, share, updateAvatar} = this.props;
+    const { action, userInfo, isVisible, actionPalettes, state, reset, collapse, share, updateAvatar } = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -36,6 +36,7 @@ class Card extends React.Component {
                   actionPalettes={actionPalettes}
                   state={state}
                   collapse={collapse}
+                  isVisible={isVisible}
                 />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
@@ -45,11 +46,15 @@ class Card extends React.Component {
                   state={state}
                   collapse={collapse}
                   updateAvatar={updateAvatar}
+                  isVisible={isVisible}
                 />
               </fieldset>
               <fieldset className="share__section">
-                <Share state={state} collapse={collapse}
+                <Share
+                  state={state}
+                  collapse={collapse}
                   share={share}
+                  isVisible={isVisible}
                 // avatar={avatar}
                 // updateAvatar={updateAvatar}
                 // isAvatarDefault={isAvatarDefault}
@@ -60,7 +65,7 @@ class Card extends React.Component {
               action={action}
               userInfo={userInfo}
               reset={reset}
-              />
+            />
           </div>
         </main>
         <footer className="card__footer">
