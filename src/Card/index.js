@@ -8,7 +8,7 @@ import Share from './Components/Share';
 
 class Card extends React.Component {
   render() {
-    const { action, userInfo, actionPalettes, state, reset, collapse } = this.props;
+    const { action, userInfo, actionPalettes, state, reset, collapse, isAvatarDefault, updateAvatar } = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -33,7 +33,11 @@ class Card extends React.Component {
                 <Design actionPalettes={actionPalettes} state={state} collapse={collapse} />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill action={action} userInfo={userInfo} state={state} collapse={collapse} />
+                <Fill action={action} userInfo={userInfo} state={state}
+                collapse={collapse}
+                isAvatarDefault={isAvatarDefault}
+                updateAvatar={updateAvatar}
+                />
               </fieldset>
               <fieldset className="share__section">
                 <Share state={state} collapse={collapse}/>

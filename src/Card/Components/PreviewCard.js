@@ -1,5 +1,5 @@
 import React from 'react';
-import UserProfile from './UserProfile';
+import userProfile from './userProfile';
 // const { name, job } = this.state;
 
 class PreviewCard extends React.Component {
@@ -11,7 +11,8 @@ class PreviewCard extends React.Component {
       phone,
       linkedin,
       github,
-      palette
+      palette,
+      photo
     } = this.props.userInfo;
     const { reset } = this.props;
     return (
@@ -36,7 +37,8 @@ class PreviewCard extends React.Component {
               </h3>
             </div>
           </div>
-          <UserProfile />
+          <div className="preview__card--image js__profile-image"
+          style={{ backgroundImage: `url(${photo})` }}/>
           <img className="image-access" src="" alt="tu foto" />
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
@@ -81,5 +83,5 @@ class PreviewCard extends React.Component {
     );
   }
 }
-
+// Faltan proptypes del componente profile de subir la foto de carlos
 export default PreviewCard;
