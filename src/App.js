@@ -46,6 +46,11 @@ class App extends React.Component {
       this.setState({
         userInfo: getItem
       });
+      if (getItem.photo !== null) {
+        this.setState({
+          isAvatarDefault: false
+        });
+      }
     }
   }
 
@@ -53,6 +58,7 @@ class App extends React.Component {
     const { userInfo } = this.state;
     this.setState(prevState => {
       const newProfile = { ...userInfo, photo: img };
+      this.saveData(newProfile);
       return {
         userInfo: newProfile,
         isAvatarDefault: false

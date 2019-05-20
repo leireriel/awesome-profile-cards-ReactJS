@@ -1,5 +1,5 @@
 import React from 'react';
-import userProfile from './userProfile';
+// import userProfile from './userProfile';
 // const { name, job } = this.state;
 
 class PreviewCard extends React.Component {
