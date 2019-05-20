@@ -2,6 +2,7 @@ import React from 'react';
 import './scss/main.scss';
 // import Home from './Home/index';
 import Card from './Card/index';
+import userProfile from './Card/Components/userProfile';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,9 +15,8 @@ class App extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        photo: '',
-        palette: 1,
-        isVisible: 'design'
+        photo: userProfile,
+        palette: 1
       },
       userDefault: {
         name: '',
@@ -25,18 +25,19 @@ class App extends React.Component {
         phone: '',
         linkedin: '',
         github: '',
-        photo: '',
-        palette: 1,
-        isVisible: 'design'
-      }
+        photo: userProfile,
+        palette: 1
+      },
+      isVisible: 'design',
+      isAvatarDefault: true
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.saveData = this.saveData.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
-
 
   componentDidMount() {
     const getItem= JSON.parse(localStorage.getItem('cardSaved'));
@@ -47,6 +48,16 @@ class App extends React.Component {
     }
   }
 
+  updateAvatar(img) {
+    const {userInfo} = this.state;
+    this.setState(prevState => {
+      const newProfile = {...userInfo, photo: img};
+      return {
+        userInfo: newProfile,
+        isAvatarDefault: false
+      }
+    });
+  }
 
   handleInputChange(event) {
     const value = event.currentTarget.value;
@@ -97,6 +108,9 @@ class App extends React.Component {
         state={this.state}
         reset={this.handleReset}
         collapse={this.handleCollapsable}
+
+        isAvatarDefault={this.state.isAvatarDefault}
+        updateAvatar={this.updateAvatar}
       />
     );
   }

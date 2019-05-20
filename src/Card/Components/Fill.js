@@ -1,8 +1,38 @@
 import React from 'react';
 
 class Fill extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.fr = new FileReader();
+    this.myFileField = React.createRef();
+
+    this.handleFilePicker = this.handleFilePicker.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+    this.getImage = this.getImage.bind(this);
+  }
+
+  handleFilePicker() {
+    this.myFileField.current.click();
+  }
+
+  uploadImage(e){
+    const myFile = e.currentTarget.files[0];
+    this.fr.addEventListener('load', this.getImage);
+    this.fr.readAsDataURL(myFile);
+  }
+
+  getImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
+  getPreview(isDefault, image) {
+    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+  }
+
   render() {
-    const { action, userInfo, state, collapse } = this.props;
+    const { action, userInfo, state, collapse, isAvatarDefault } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -56,15 +86,20 @@ class Fill extends React.Component {
             <input
               className="form_field-photo js__profile-upload-btn"
               type="file"
+              onChange={this.uploadImage}
+              ref={this.myFileField}
               name="photo"
               id="photo"
               required
             />
             <div className="form__container-btn">
-              <button type="button" className="form__btn js__profile-trigger">
+              <button type="button" className="form__btn js__profile-trigger"
+              onClick={this.handleFilePicker}>
                 Añadir imagen
               </button>
-              <div className="form__photo-preview js__profile-preview" />
+              <div className="form__photo-preview js__profile-preview"
+              style={this.getPreview(isAvatarDefault, userInfo.photo)}
+               />
             </div>
           </div>
           <div className="form__container-email">
@@ -131,5 +166,5 @@ class Fill extends React.Component {
     );
   }
 }
-
+// Faltan las proptypes del componente de carlos
 export default Fill;
