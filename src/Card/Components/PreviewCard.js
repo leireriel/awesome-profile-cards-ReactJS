@@ -1,5 +1,5 @@
 import React from 'react';
-import UserProfile from './UserProfile';
+import userProfile from './userProfile';
 // const { name, job } = this.state;
 
 class PreviewCard extends React.Component {
@@ -36,7 +36,7 @@ class PreviewCard extends React.Component {
               </h3>
             </div>
           </div>
-          <UserProfile />
+          <div className="preview__card--image js__profile-image" style={{ backgroundImage: `url(${userProfile})` }}/>
           <img className="image-access" src="" alt="tu foto" />
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
