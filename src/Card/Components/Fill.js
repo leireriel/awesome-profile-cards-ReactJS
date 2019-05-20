@@ -1,8 +1,9 @@
 import React from 'react';
+import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const { action, userInfo, state, collapse } = this.props;
+    const { action, userInfo, state, collapse, updateAvatar } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -49,24 +50,9 @@ class Fill extends React.Component {
               required
             />
           </div>
-          <div className="form__container-photo">
-            <label className="form_title-photo" htmlFor="photo">
-              Imagen de perfil *
-            </label>
-            <input
-              className="form_field-photo js__profile-upload-btn"
-              type="file"
-              name="photo"
-              id="photo"
-              required
-            />
-            <div className="form__container-btn">
-              <button type="button" className="form__btn js__profile-trigger">
-                Añadir imagen
-              </button>
-              <div className="form__photo-preview js__profile-preview" />
-            </div>
-          </div>
+          <GetAvatar
+            updateAvatar={updateAvatar}
+          />
           <div className="form__container-email">
             <label className="form_title" htmlFor="email">
               Email *

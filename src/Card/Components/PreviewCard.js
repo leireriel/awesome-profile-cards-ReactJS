@@ -11,7 +11,8 @@ class PreviewCard extends React.Component {
       phone,
       linkedin,
       github,
-      palette
+      palette,
+      avatar
     } = this.props.userInfo;
     const { reset } = this.props;
     return (
@@ -37,7 +38,10 @@ class PreviewCard extends React.Component {
             </div>
           </div>
           <UserProfile />
-          <img className="image-access" src="" alt="tu foto" />
+          <div
+          className="image-access"
+          style={{backgroundImage: `url(${avatar})`}}>
+          </div>
           <div className="preview__card--bottom">
             <ul className="preview__card--sm">
               <li className={`sm mail ${email === '' ? 'hidden' : ''}`}>

@@ -10,7 +10,7 @@ import Share from './Components/Share';
 
 class Card extends React.Component {
   render() {
-    const { action, userInfo, actionPalettes, state, reset, collapse, share, avatar, updateAvatar, isAvatarDefault } = this.props;
+    const { action, userInfo, actionPalettes, state, reset, collapse, share, updateAvatar} = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
@@ -32,21 +32,35 @@ class Card extends React.Component {
               className="card__section1"
             >
               <fieldset className="design js-container">
-                <Design actionPalettes={actionPalettes} state={state} collapse={collapse} />
+                <Design
+                  actionPalettes={actionPalettes}
+                  state={state}
+                  collapse={collapse}
+                />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill action={action} userInfo={userInfo} state={state} collapse={collapse} />
+                <Fill
+                  action={action}
+                  userInfo={userInfo}
+                  state={state}
+                  collapse={collapse}
+                  updateAvatar={updateAvatar}
+                />
               </fieldset>
               <fieldset className="share__section">
                 <Share state={state} collapse={collapse}
-                share={share}
-                avatar={avatar}
-                updateAvatar={updateAvatar}
-                isAvatarDefault={isAvatarDefault}
+                  share={share}
+                // avatar={avatar}
+                // updateAvatar={updateAvatar}
+                // isAvatarDefault={isAvatarDefault}
                 />
               </fieldset>
             </form>
-            <PreviewCard action={action} userInfo={userInfo} reset={reset} />
+            <PreviewCard
+              action={action}
+              userInfo={userInfo}
+              reset={reset}
+              />
           </div>
         </main>
         <footer className="card__footer">
