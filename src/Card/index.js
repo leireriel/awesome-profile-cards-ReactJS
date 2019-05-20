@@ -5,21 +5,31 @@ import PreviewCard from './Components/PreviewCard';
 import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
+import { Link } from 'react-router-dom';
 
 class Card extends React.Component {
   render() {
-    const { action, userInfo, actionPalettes, state, reset, collapse, isAvatarDefault, updateAvatar } = this.props;
+    const {
+      action,
+      userInfo,
+      actionPalettes,
+      state,
+      reset,
+      collapse,
+      isAvatarDefault,
+      updateAvatar
+    } = this.props;
     return (
       <React.Fragment>
         <header className="card__header">
           <div className="wrapper card__header">
-            <a href="index.html">
+            <Link to="/">
               <img
                 className="card__header-image"
                 src={Logo}
                 alt="Ir a la home"
               />
-            </a>
+            </Link>
           </div>
         </header>
         <main className="main__card">
@@ -30,17 +40,24 @@ class Card extends React.Component {
               className="card__section1"
             >
               <fieldset className="design js-container">
-                <Design actionPalettes={actionPalettes} state={state} collapse={collapse} />
+                <Design
+                  actionPalettes={actionPalettes}
+                  state={state}
+                  collapse={collapse}
+                />
               </fieldset>
               <fieldset className="section__fill js-container js-container-hidden">
-                <Fill action={action} userInfo={userInfo} state={state}
-                collapse={collapse}
-                isAvatarDefault={isAvatarDefault}
-                updateAvatar={updateAvatar}
+                <Fill
+                  action={action}
+                  userInfo={userInfo}
+                  state={state}
+                  collapse={collapse}
+                  isAvatarDefault={isAvatarDefault}
+                  updateAvatar={updateAvatar}
                 />
               </fieldset>
               <fieldset className="share__section">
-                <Share state={state} collapse={collapse}/>
+                <Share state={state} collapse={collapse} />
               </fieldset>
             </form>
             <PreviewCard action={action} userInfo={userInfo} reset={reset} />
