@@ -1,6 +1,7 @@
 import React from 'react';
 import './scss/main.scss';
-// import Home from './Home/index';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
 
@@ -40,22 +41,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const getItem= JSON.parse(localStorage.getItem('cardSaved'));
-    if(getItem !== null) {
+    const getItem = JSON.parse(localStorage.getItem('cardSaved'));
+    if (getItem !== null) {
       this.setState({
-      userInfo: getItem
+        userInfo: getItem
       });
     }
   }
 
   updateAvatar(img) {
-    const {userInfo} = this.state;
+    const { userInfo } = this.state;
     this.setState(prevState => {
-      const newProfile = {...userInfo, photo: img};
+      const newProfile = { ...userInfo, photo: img };
       return {
         userInfo: newProfile,
         isAvatarDefault: false
-      }
+      };
     });
   }
 
@@ -88,33 +89,41 @@ class App extends React.Component {
   handleCollapsable(e) {
     const id = e.currentTarget.id;
     this.setState((prevState, props) => {
-      const newId = {...prevState.userInfo, isVisible: id};
+      const newId = { ...prevState.userInfo, isVisible: id };
       return {
         userInfo: newId
-       };
+      };
     });
   }
 
   saveData(obj) {
-    localStorage.setItem('cardSaved', JSON.stringify(obj))
+    localStorage.setItem('cardSaved', JSON.stringify(obj));
   }
 
   render() {
     return (
-      <Card
-        action={this.handleInputChange}
-        userInfo={this.state.userInfo}
-        actionPalettes={this.handlePalettes}
-        state={this.state}
-        reset={this.handleReset}
-        collapse={this.handleCollapsable}
-
-        isAvatarDefault={this.state.isAvatarDefault}
-        updateAvatar={this.updateAvatar}
-      />
+      <React.Fragment>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            path="/card"
+            render={() => (
+              <Card
+                action={this.handleInputChange}
+                userInfo={this.state.userInfo}
+                actionPalettes={this.handlePalettes}
+                state={this.state}
+                reset={this.handleReset}
+                collapse={this.handleCollapsable}
+                isAvatarDefault={this.state.isAvatarDefault}
+                updateAvatar={this.updateAvatar}
+              />
+            )}
+          />
+        </Switch>
+      </React.Fragment>
     );
   }
 }
-
 
 export default App;

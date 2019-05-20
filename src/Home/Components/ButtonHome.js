@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ButtonHome extends React.Component {
   render() {
-    const {button} = this.props;
+    const { button } = this.props;
     return (
       <a className="home__button" href="card.html">
-        <span className="home__button-text">{button}</span>
+        <Link to="/card">
+          <span className="home__button-text">{button}</span>
+        </Link>
       </a>
     );
   }
