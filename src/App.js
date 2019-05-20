@@ -3,6 +3,7 @@ import './scss/main.scss';
 // import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
+import { fetchCard } from './Services/CardServices';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,25 +38,26 @@ class App extends React.Component {
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.fetchNewCard = this.fetchNewCard.bind(this);
   }
 
   componentDidMount() {
-    const getItem= JSON.parse(localStorage.getItem('cardSaved'));
-    if(getItem !== null) {
+    const getItem = JSON.parse(localStorage.getItem('cardSaved'));
+    if (getItem !== null) {
       this.setState({
-      userInfo: getItem
+        userInfo: getItem
       });
     }
   }
 
   updateAvatar(img) {
-    const {userInfo} = this.state;
+    const { userInfo } = this.state;
     this.setState(prevState => {
-      const newProfile = {...userInfo, photo: img};
+      const newProfile = { ...userInfo, photo: img };
       return {
         userInfo: newProfile,
         isAvatarDefault: false
-      }
+      };
     });
   }
 
@@ -88,15 +90,22 @@ class App extends React.Component {
   handleCollapsable(e) {
     const id = e.currentTarget.id;
     this.setState((prevState, props) => {
-      const newId = {...prevState.userInfo, isVisible: id};
+      const newId = { ...prevState.userInfo, isVisible: id };
       return {
         userInfo: newId
-       };
+      };
     });
   }
 
   saveData(obj) {
-    localStorage.setItem('cardSaved', JSON.stringify(obj))
+    localStorage.setItem('cardSaved', JSON.stringify(obj));
+  }
+
+  fetchNewCard() {
+    fetchCard().then(data => {
+      console.log(data);
+      console.log(data.cardURL);
+    });
   }
 
   render() {
@@ -108,13 +117,12 @@ class App extends React.Component {
         state={this.state}
         reset={this.handleReset}
         collapse={this.handleCollapsable}
-
         isAvatarDefault={this.state.isAvatarDefault}
         updateAvatar={this.updateAvatar}
+        share={this.fetchNewCard}
       />
     );
   }
 }
-
 
 export default App;
