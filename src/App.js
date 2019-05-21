@@ -46,6 +46,11 @@ class App extends React.Component {
       this.setState({
         userInfo: getItem
       });
+      if (getItem.photo !== null) {
+        this.setState({
+          isAvatarDefault: false
+        });
+      }
     }
   }
 
@@ -53,6 +58,7 @@ class App extends React.Component {
     const { userInfo } = this.state;
     this.setState(prevState => {
       const newProfile = { ...userInfo, photo: img };
+      this.saveData(newProfile);
       return {
         userInfo: newProfile,
         isAvatarDefault: false
@@ -82,14 +88,14 @@ class App extends React.Component {
 
   handleReset() {
     this.setState((prevState, props) => {
-      return { userInfo: this.state.userDefault };
+      return { userInfo: this.state.userDefault }; //REVISAR
     });
   }
 
   handleCollapsable(e) {
     const id = e.currentTarget.id;
     this.setState((prevState, props) => {
-      const newId = { ...prevState.userInfo, isVisible: id };
+      const newId = { ...prevState.userInfo, isVisible: id }; //REVISAR
       return {
         userInfo: newId
       };
