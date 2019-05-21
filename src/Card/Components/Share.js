@@ -2,7 +2,7 @@ import React from 'react';
 
 class Share extends React.Component {
   render() {
-    const { state, collapse } = this.props;
+    const { state, collapse, actionShare } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de compartir</legend>
@@ -24,7 +24,7 @@ class Share extends React.Component {
               state.userInfo.isVisible === 'share' ? '' : 'js-container-panel'
             }`}
           >
-            <button type="submit" className="share__btn--create">
+            <button type="submit" className="share__btn--create" onClick={actionShare}>
               <i className="far fa-address-card" />
               Crear tarjeta
             </button>

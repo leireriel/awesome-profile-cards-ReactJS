@@ -39,6 +39,7 @@ class App extends React.Component {
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.fetchNewCard = this.fetchNewCard.bind(this);
   }
 
   componentDidMount() {
@@ -104,6 +105,8 @@ class App extends React.Component {
   }
 
   fetchNewCard(event) {
+    const getItem = JSON.parse(localStorage.getItem('cardSaved'));
+
     event.preventDefault();
     const ENDPOINT = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
 
@@ -113,7 +116,7 @@ class App extends React.Component {
       headers: {
         "content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.userInfo),
+      body: JSON.stringify(getItem),
     })
       .then(res => res.json())
     // fetchCard(this.state.userInfo)
@@ -151,6 +154,7 @@ class App extends React.Component {
                 collapse={this.handleCollapsable}
                 isAvatarDefault={this.state.isAvatarDefault}
                 updateAvatar={this.updateAvatar}
+                actionShare={this.fetchNewCard}
               />
             )}
           />
