@@ -42,6 +42,7 @@ class App extends React.Component {
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.fetchNewCard = this.fetchNewCard.bind(this);
+    this.createTweet = this.createTweet.bind(this);
   }
 
   componentDidMount() {
@@ -106,23 +107,25 @@ class App extends React.Component {
     });
   }
 
+  createTweet(url) {
+    const twitterLinkBtn = document.querySelector('.share__btn--twitter');
+    const twitterLink = 'https://twitter.com/intent/tweet';
+    const hashtags = 'AdalabDigital,adalabers,unicodes,gorkapower';
+    const text = 'Check%20out%20my%20new%20online%20business%20card%20from%20Awesome%20Profile%20Cards!%20';
+    const tweet = `${twitterLink}?text=${text};hashtags=${hashtags}%20${url}`;
+    twitterLinkBtn.href = tweet;
+  }
+
   fetchNewCard(event) {
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
     event.preventDefault();
     fetchCard(getItem)
       .then(data => {
-      // console.log(data);
-      // console.log('card', data.cardURL);
-      this.setState({
-        urlAPI: data.cardURL
+        this.setState({
+          urlAPI: data.cardURL
+        })
+        this.createTweet(data.cardURL);
       })
-      // const urlGenerated = data.cardURL;
-      // cardUrl.innerHTML = urlGenerated;
-      // cardUrl.href = urlGenerated;
-      // shareTwitter.classList.remove('hidden');
-      // createTweet(urlGenerated);
-
-    })
   }
 
   saveData(obj) {
