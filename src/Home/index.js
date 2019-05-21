@@ -14,26 +14,17 @@ class Home extends React.Component {
         <div className="home__container2">
           <header className="home__header">
             <div className="home__wrapper home__header-wrapper">
-              <LogoHome
-              src={Logo}
-              alt="Awesome profile cards logo"
-              />
+              <LogoHome src={Logo} alt="Awesome profile cards logo" />
             </div>
           </header>
           <main className="home">
             <div className="home__wrapper home__main-wrapper">
               <TitleHome
-              title="Crea tu tarjeta de visita"
-              subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
+                title="Crea tu tarjeta de visita"
+                subtitle="Crea mejores contactos profesionales de forma fácil y cómoda"
               />
-              <IconsHome
-              design="Diseña"
-              fill="Rellena"
-              share="Comparte"
-              />
-              <ButtonHome
-              button="Comenzar"
-              />
+              <IconsHome design="Diseña" fill="Rellena" share="Comparte" />
+              <ButtonHome button="Comenzar" />
             </div>
           </main>
         </div>

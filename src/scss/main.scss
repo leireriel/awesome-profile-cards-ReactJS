@@ -1,0 +1,86 @@
+@import "core/mixins";
+@import "core/variables";
+
+@import "components/buttons";
+@import "components/forms";
+@import "components/typography";
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home__wrapper {
+  margin: 0 20px;
+}
+
+@media all and (min-width: 768px) {
+  .home__wrapper {
+    margin: 0 174px;
+  }
+}
+
+.home__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home__container2 {
+  background: $color-light-grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 400px;
+  padding: 30px 0;
+}
+//HOME
+@import "layout/header";
+@import "layout/main-home";
+@import "layout/footer";
+
+.wrapper {
+  margin: 0 20px 0 20px;
+  padding: 0;
+  @media all and (min-width: 768px) {
+    margin: 0 40px 0 40px;
+  }
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.main__card {
+  @media all and (min-width: 768px) {
+    background: linear-gradient(to bottom, $color-light-grey, $color-white);
+  }
+}
+
+.main__card-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.card__section1 {
+  margin-top: 27px;
+  @media all and (min-width: 768px) {
+    margin-right: 30px;
+    width: 40%;
+  }
+}
+
+//CARD
+@import "layout/header-card";
+@import "layout/design";
+@import "layout/fill";
+@import "layout/share";
+@import "layout/preview";
+@import "layout/footer-card";
