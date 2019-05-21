@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
+// import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -102,11 +103,38 @@ class App extends React.Component {
     });
   }
 
+  fetchNewCard(event) {
+    event.preventDefault();
+    const ENDPOINT = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+
+    // const fetchCard = (obj) =>
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state.userInfo),
+    })
+      .then(res => res.json())
+    // fetchCard(this.state.userInfo)
+      .then(data => {
+        console.log(data);
+        console.log('card', data.cardURL);
+        // const urlGenerated = data.cardURL;
+        // cardUrl.innerHTML = urlGenerated;
+        // cardUrl.href = urlGenerated;
+        // shareTwitter.classList.remove('hidden');
+        // createTweet(urlGenerated);
+
+      })
+  }
+
   saveData(obj) {
     localStorage.setItem('cardSaved', JSON.stringify(obj));
   }
 
   render() {
+    console.log('obj', this.state)
     return (
       <React.Fragment>
         <Switch>
