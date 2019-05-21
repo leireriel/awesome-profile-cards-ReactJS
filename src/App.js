@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
+import { fetchCard } from './Services/fetchCard';
+// import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +32,8 @@ class App extends React.Component {
         palette: 1
       },
       isVisible: 'design',
-      isAvatarDefault: true
+      isAvatarDefault: true,
+      urlAPI: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -38,6 +41,8 @@ class App extends React.Component {
     this.handleCollapsable = this.handleCollapsable.bind(this);
     this.saveData = this.saveData.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.fetchNewCard = this.fetchNewCard.bind(this);
+    this.createTweet = this.createTweet.bind(this);
   }
 
   componentDidMount() {
@@ -102,11 +107,33 @@ class App extends React.Component {
     });
   }
 
+  createTweet(url) {
+    const twitterLinkBtn = document.querySelector('.share__btn--twitter');
+    const twitterLink = 'https://twitter.com/intent/tweet';
+    const hashtags = 'AdalabDigital,adalabers,unicodes,gorkapower';
+    const text = 'Check%20out%20my%20new%20online%20business%20card%20from%20Awesome%20Profile%20Cards!%20';
+    const tweet = `${twitterLink}?text=${text};hashtags=${hashtags}%20${url}`;
+    twitterLinkBtn.href = tweet;
+  }
+
+  fetchNewCard(event) {
+    const getItem = JSON.parse(localStorage.getItem('cardSaved'));
+    event.preventDefault();
+    fetchCard(getItem)
+      .then(data => {
+        this.setState({
+          urlAPI: data.cardURL
+        })
+        this.createTweet(data.cardURL);
+      })
+  }
+
   saveData(obj) {
     localStorage.setItem('cardSaved', JSON.stringify(obj));
   }
 
   render() {
+    console.log('obj', this.state)
     return (
       <React.Fragment>
         <Switch>
@@ -123,6 +150,7 @@ class App extends React.Component {
                 collapse={this.handleCollapsable}
                 isAvatarDefault={this.state.isAvatarDefault}
                 updateAvatar={this.updateAvatar}
+                actionShare={this.fetchNewCard}
               />
             )}
           />

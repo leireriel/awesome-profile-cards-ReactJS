@@ -17,7 +17,8 @@ class Card extends React.Component {
       reset,
       collapse,
       isAvatarDefault,
-      updateAvatar
+      updateAvatar,
+      actionShare
     } = this.props;
     return (
       <React.Fragment>
@@ -57,7 +58,7 @@ class Card extends React.Component {
                 />
               </fieldset>
               <fieldset className="share__section">
-                <Share state={state} collapse={collapse} />
+                <Share state={state} collapse={collapse} actionShare={actionShare}/>
               </fieldset>
             </form>
             <PreviewCard action={action} userInfo={userInfo} reset={reset} />
