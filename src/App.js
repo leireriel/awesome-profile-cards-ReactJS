@@ -90,10 +90,17 @@ class App extends React.Component {
       return { userInfo: newPalettes };
     });
   }
+  saveData(obj) {
+    localStorage.setItem('cardSaved', JSON.stringify(obj));
+  }
 
   handleReset() {
+    this.saveData(this.state.userDefault);
     this.setState((prevState, props) => {
-      return { userInfo: this.state.userDefault }; //REVISAR
+      return {
+        userInfo: this.state.userDefault,
+        isAvatarDefault: true
+      }; //REVISAR
     });
   }
 
@@ -126,10 +133,6 @@ class App extends React.Component {
         })
         this.createTweet(data.cardURL);
       })
-  }
-
-  saveData(obj) {
-    localStorage.setItem('cardSaved', JSON.stringify(obj));
   }
 
   render() {

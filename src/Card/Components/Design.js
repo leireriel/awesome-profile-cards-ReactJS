@@ -33,7 +33,7 @@ class Design extends React.Component {
                 name="palette"
                 className="radio_btn"
                 onChange={actionPalettes}
-                
+                checked={state.userInfo.palette === 1}
               />
               <ul className="theme">
                 <li
