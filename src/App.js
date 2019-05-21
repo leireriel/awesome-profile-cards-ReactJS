@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
+import { fetchCard } from './Services/fetchCard';
 // import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
@@ -31,7 +32,8 @@ class App extends React.Component {
         palette: 1
       },
       isVisible: 'design',
-      isAvatarDefault: true
+      isAvatarDefault: true,
+      urlAPI: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -106,30 +108,21 @@ class App extends React.Component {
 
   fetchNewCard(event) {
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
-
     event.preventDefault();
-    const ENDPOINT = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
-
-    // const fetchCard = (obj) =>
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(getItem),
-    })
-      .then(res => res.json())
-    // fetchCard(this.state.userInfo)
+    fetchCard(getItem)
       .then(data => {
-        console.log(data);
-        console.log('card', data.cardURL);
-        // const urlGenerated = data.cardURL;
-        // cardUrl.innerHTML = urlGenerated;
-        // cardUrl.href = urlGenerated;
-        // shareTwitter.classList.remove('hidden');
-        // createTweet(urlGenerated);
-
+      // console.log(data);
+      // console.log('card', data.cardURL);
+      this.setState({
+        urlAPI: data.cardURL
       })
+      // const urlGenerated = data.cardURL;
+      // cardUrl.innerHTML = urlGenerated;
+      // cardUrl.href = urlGenerated;
+      // shareTwitter.classList.remove('hidden');
+      // createTweet(urlGenerated);
+
+    })
   }
 
   saveData(obj) {
