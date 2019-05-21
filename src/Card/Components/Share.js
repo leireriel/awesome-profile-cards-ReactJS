@@ -10,6 +10,7 @@ class Share extends React.Component {
           className="share__section js-container js-container-hidden"
           id="share"
           onClick={collapse}
+          data-id="share"
         >
           <div className="share__card js-container-title">
             <p className="share__title">
@@ -21,7 +22,7 @@ class Share extends React.Component {
           </div>
           <div
             className={`share__btn--wrapper ${
-              state.userInfo.isVisible === 'share' ? '' : 'js-container-panel'
+              state.isVisible === 'share' ? '' : 'js-container-panel'
             }`}
           >
             <button type="submit" className="share__btn--create" onClick={actionShare}>

@@ -105,12 +105,15 @@ class App extends React.Component {
   }
 
   handleCollapsable(e) {
-    const id = e.currentTarget.id;
+    const newVisible = e.currentTarget.getAttribute('data-id');
     this.setState((prevState, props) => {
-      const newId = { ...prevState.userInfo, isVisible: id }; //REVISAR
-      return {
-        userInfo: newId
-      };
+      if(newVisible === prevState.isVisible){
+        return {isVisible: null}
+      } else {
+        return {
+          isVisible: newVisible
+        }
+      }
     });
   }
 
