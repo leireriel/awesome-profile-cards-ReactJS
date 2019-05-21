@@ -9,7 +9,8 @@ class Design extends React.Component {
         <div
           className="design__container__title js-container-title"
           id="design"
-          onClick={collapse}>
+          onClick={collapse}
+          data-id="design">
           <div className="design__container__title1">
             <i className="design__icon far fa-object-ungroup" />
             <h2 className="design__title">DISEÑA</h2>
@@ -18,8 +19,12 @@ class Design extends React.Component {
               <i className="fas fa-chevron-up design__img-arrow" />
           </div>
         </div>
-        <div className={`design__container__form ${state.userInfo.isVisible === 'design' ? '' : 'js-container-panel'}`} >
+        <div className=
+        // "design__container__form js-container-panel"
+        {`design__container__form ${state.isVisible === 'design' ? '' : 'hidden'}`}
+         >
           <h3 className="design__subtitle">COLORES</h3>
+          <div>
           <ul className="desing__colors-list">
             <li className="design__form design__form-blue">
               {/* esta clase revisar */}
@@ -109,6 +114,7 @@ class Design extends React.Component {
               </ul>
             </li>
           </ul>
+          </div>
         </div>
       </React.Fragment>
     );
