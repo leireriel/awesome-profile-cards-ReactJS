@@ -30,9 +30,9 @@ class Share extends React.Component {
             </button>
           </div>
         </div>
-        <div className="share__info--wrapper hidden">
+        <div className="share__info--wrapper ">
           <p className="share__paragraph">La tarjeta ha sido creada:</p>
-          {/* <a className="share__link--cards link" href="#Crear" /> */}
+          <a className="share__link--cards link" href={`${state.urlAPI}`}>{state.urlAPI}</a>
           <a className="share__btn--twitter link" href="#Crear">
             <i className="fab fa-twitter" />
             Compartir en twitter
