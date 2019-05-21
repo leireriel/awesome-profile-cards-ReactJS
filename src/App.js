@@ -88,14 +88,14 @@ class App extends React.Component {
 
   handleReset() {
     this.setState((prevState, props) => {
-      return { userInfo: this.state.userDefault };
+      return { userInfo: this.state.userDefault }; //REVISAR
     });
   }
 
   handleCollapsable(e) {
     const id = e.currentTarget.id;
     this.setState((prevState, props) => {
-      const newId = { ...prevState.userInfo, isVisible: id };
+      const newId = { ...prevState.userInfo, isVisible: id }; //REVISAR
       return {
         userInfo: newId
       };
