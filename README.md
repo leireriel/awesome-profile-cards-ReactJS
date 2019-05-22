@@ -15,15 +15,15 @@ Sigue estos pasos si quieres tener una copia del proyecto:
 3. ¡ Listo !
 
 ## 🛠 Construido con
-* [React] (https://reactjs.org/) - Framework de JavaScript
-* [SASS] (https://sass-lang.com/) - Preprocesador de estilos 
+* [React](https://reactjs.org/) - Framework de JavaScript
+* [SASS](https://sass-lang.com/) - Preprocesador de estilos 
 
 ## ✍️ Autoras
 
-* [Ana Jaime Díaz] (https://github.com/anajd)
-* [Ariane Jurado De Bilbao] (https://github.com/ArianeJDB)
-* [Leire Rico Prieto] (https://github.com/leireriel)
-* [Libertad Chapinal Cervantes] (https://github.com/libertadcc)
+* [Ana Jaime Díaz](https://github.com/anajd)
+* [Ariane Jurado De Bilbao](https://github.com/ArianeJDB)
+* [Leire Rico Prieto](https://github.com/leireriel)
+* [Libertad Chapinal Cervantes](https://github.com/libertadcc)
 
 ## 🎁 Agradecimientos
 ¡Gracias por interesarte por nuestro proyecto! 
