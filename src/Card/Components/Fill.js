@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Fill extends React.Component {
   constructor(props) {
@@ -167,5 +168,16 @@ class Fill extends React.Component {
     );
   }
 }
-// Faltan las proptypes del componente de carlos
+
+Fill.propTypes = {
+  name: PropTypes.string,
+  job: PropTypes.string,
+  isAvatarDefault: PropTypes.bool,
+  photo: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.number,
+  linkedin: PropTypes.string,
+  github: PropTypes.string
+}
+
 export default Fill;

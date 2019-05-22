@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // import userProfile from './userProfile';
 // const { name, job } = this.state;
 
@@ -83,5 +84,7 @@ class PreviewCard extends React.Component {
     );
   }
 }
-// Faltan proptypes del componente profile de subir la foto de carlos
+PreviewCard.propTypes = {
+  photo: PropTypes.string.isRequired
+};
 export default PreviewCard;
