@@ -739,8 +739,7 @@ fieldset {
   display: flex;
   position: absolute;
   top: 10px;
-  left: 20px;
-  display: none;
+  left: 20px
 }
 
 .sm {
