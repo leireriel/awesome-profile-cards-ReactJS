@@ -1,90 +1,91 @@
 .home {
-    
-    
 }
 
 .home__main-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home__title {
-    width: 223px;
-    height: 24px;
-    margin: 5px 14px 0 13px;
-    @include home-title();
+  width: 223px;
+  height: 24px;
+  margin: 5px 14px 0 13px;
+  @include home-title();
 }
 
 .home__subtitle {
-    margin: 0 0 17px 0;
-    @include home-subtitle();
+  margin: 0 0 17px 0;
+  @include home-subtitle();
 }
 
 .home__list {
-    list-style: none;
-    padding: 0;
-    width: 268px;
-    height: 74px;
-    border: solid 2px $color-orange-transparent;
-    border-radius: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  padding: 0;
+  width: 268px;
+  height: 74px;
+  border: solid 2px $color-orange-transparent;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .home__list-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .home__list-image {
-    width: 32px;
-    height: 26px;
-    color: $color-orange;
-    font-size: 23px;
+  width: 32px;
+  height: 26px;
+  color: $color-orange;
+  font-size: 23px;
 }
 
 .home__list-text {
-    text-align: center;
-    margin: 0;
-    @include home-iconLabel();
+  text-align: center;
+  margin: 0;
+  @include home-iconLabel();
 }
 
 /*Button*/
 
 .home__button {
-    margin: 60px 0;
+  margin: 60px 0;
+  &:hover {
+    background-color: $color-orange;
+    transition: 0.4s ease-in-out;
+  }
 }
 
 .home__button-text {
-    color: $color-white;
-    @include home-button();
+  color: $color-white;
+  @include home-button();
 }
 
 /*tablet*/
 @media all and (min-width: 768px) {
-    .home__title {
-        width: 278px;
-        height: 31px;
-        margin: 0;
-    }
+  .home__title {
+    width: 278px;
+    height: 31px;
+    margin: 0;
+  }
 
-    .home__subtitle {
-        margin: 0 0 25px 0;
-        width: 331px;
-        height: 48px;
-    }
+  .home__subtitle {
+    margin: 0 0 25px 0;
+    width: 331px;
+    height: 48px;
+  }
 
-    .home__list {
-        width: 325px;
-        height: 86px;
-    }
+  .home__list {
+    width: 325px;
+    height: 86px;
+  }
 
-    .home__list-image {
+  .home__list-image {
     font-size: 28px;
-    }
+  }
 }

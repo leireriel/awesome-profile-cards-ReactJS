@@ -16,7 +16,7 @@ class Fill extends React.Component {
     this.myFileField.current.click();
   }
 
-  uploadImage(e){
+  uploadImage(e) {
     const myFile = e.currentTarget.files[0];
     this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
@@ -28,7 +28,7 @@ class Fill extends React.Component {
   }
 
   getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+    return !isDefault ? { backgroundImage: `url(${image})` } : {};
   }
 
   render() {
@@ -40,7 +40,8 @@ class Fill extends React.Component {
           className="fill__container-title js-container-title"
           id="fill"
           onClick={collapse}
-          data-id="fill">
+          data-id="fill"
+        >
           <div className="fill__container_img-keyboard">
             <i className="far fa-keyboard fill__img-keyboard" />
           </div>
@@ -49,7 +50,11 @@ class Fill extends React.Component {
             <i className="fas fa-chevron-up fill__img-arrow" />
           </div>
         </div>
-        <div className={`fill__form ${state.isVisible === 'fill' ? '' : 'js-container-panel'}`}>
+        <div
+          className={`fill__form ${
+            state.isVisible === 'fill' ? '' : 'js-container-panel'
+          }`}
+        >
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *
@@ -94,13 +99,17 @@ class Fill extends React.Component {
               required
             />
             <div className="form__container-btn">
-              <button type="button" className="form__btn js__profile-trigger"
-              onClick={this.handleFilePicker}>
+              <button
+                type="button"
+                className="form__btn js__profile-trigger"
+                onClick={this.handleFilePicker}
+              >
                 Añadir imagen
               </button>
-              <div className="form__photo-preview js__profile-preview"
-              style={this.getPreview(isAvatarDefault, userInfo.photo)}
-               />
+              <div
+                className="form__photo-preview js__profile-preview"
+                style={this.getPreview(isAvatarDefault, userInfo.photo)}
+              />
             </div>
           </div>
           <div className="form__container-email">
