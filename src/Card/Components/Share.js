@@ -2,7 +2,7 @@ import React from 'react';
 
 class Share extends React.Component {
   render() {
-    const { state, collapse, actionShare } = this.props;
+    const { urlAPI, isVisible, collapse, actionShare } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de compartir</legend>
@@ -22,7 +22,7 @@ class Share extends React.Component {
           </div>
           <div
             className={`share__btn--wrapper ${
-              state.isVisible === 'share' ? '' : 'js-container-panel'
+              isVisible === 'share' ? '' : 'js-container-panel'
             }`}
           >
             <button type="submit" className="share__btn--create" onClick={actionShare}>
@@ -31,9 +31,9 @@ class Share extends React.Component {
             </button>
           </div>
         </div>
-        <div className={`share__info--wrapper ${state.urlAPI === '' ? 'hidden' : ''}`}>
+        <div className={`share__info--wrapper ${urlAPI === '' ? 'hidden' : ''}`}>
           <p className="share__paragraph">La tarjeta ha sido creada:</p>
-          <a className="share__link--cards link" href={`${state.urlAPI}`}>{state.urlAPI}</a>
+          <a className="share__link--cards link" href={`${urlAPI}`}>{urlAPI}</a>
           <a className="share__btn--twitter link" href="#Crear">
             <i className="fab fa-twitter" />
             Compartir en twitter

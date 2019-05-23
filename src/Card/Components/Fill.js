@@ -7,7 +7,6 @@ class Fill extends React.Component {
 
     this.fr = new FileReader();
     this.myFileField = React.createRef();
-
     this.handleFilePicker = this.handleFilePicker.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
@@ -33,7 +32,8 @@ class Fill extends React.Component {
   }
 
   render() {
-    const { action, userInfo, state, collapse, isAvatarDefault } = this.props;
+    const { action, isVisible, collapse, isAvatarDefault } = this.props;
+    const {name, job, photo, email, phone, linkedin, github } = this.props.userInfo;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -50,7 +50,7 @@ class Fill extends React.Component {
             <i className="fas fa-chevron-up fill__img-arrow" />
           </div>
         </div>
-        <div className={`fill__form ${state.isVisible === 'fill' ? '' : 'js-container-panel'}`}>
+        <div className={`fill__form ${isVisible === 'fill' ? '' : 'js-container-panel'}`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *
@@ -59,7 +59,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="name"
-              value={userInfo.name}
+              value={name}
               id="name"
               placeholder="Ej: Sally Jill"
               onChange={action}
@@ -74,7 +74,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="job"
-              value={userInfo.job}
+              value={job}
               id="job"
               placeholder="Ej: Front-end unicorn"
               onChange={action}
@@ -100,7 +100,7 @@ class Fill extends React.Component {
                 Añadir imagen
               </button>
               <div className="form__photo-preview js__profile-preview"
-              style={this.getPreview(isAvatarDefault, userInfo.photo)}
+              style={this.getPreview(isAvatarDefault, photo)}
                />
             </div>
           </div>
@@ -112,7 +112,7 @@ class Fill extends React.Component {
               className="form_field"
               type="email"
               name="email"
-              value={userInfo.email}
+              value={email}
               id="email"
               placeholder="Ej: sally-hill@gmail.com"
               onChange={action}
@@ -127,7 +127,7 @@ class Fill extends React.Component {
               className="form_field"
               type="tel"
               name="phone"
-              value={userInfo.phone}
+              value={phone}
               id="phone"
               placeholder="Ej: 555-55-55-55"
               onChange={action}
@@ -141,7 +141,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="linkedin"
-              value={userInfo.linkedin}
+              value={linkedin}
               id="linkedin"
               placeholder="Ej: linkedin.com/in/sally.hill"
               onChange={action}
@@ -156,7 +156,7 @@ class Fill extends React.Component {
               className="form_field"
               type="text"
               name="github"
-              value={userInfo.github}
+              value={github}
               id="github"
               placeholder="Ej: sally-hill"
               onChange={action}
@@ -177,7 +177,8 @@ Fill.propTypes = {
   email: PropTypes.string,
   phone: PropTypes.number,
   linkedin: PropTypes.string,
-  github: PropTypes.string
+  github: PropTypes.string,
+  isVisible: PropTypes.string
 }
 
 export default Fill;
