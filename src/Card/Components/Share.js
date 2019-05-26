@@ -33,7 +33,7 @@ class Share extends React.Component {
           </div>
         </div>
         {state.loading ? (<Loader  />)
-        : (state.fetch !== false ?
+        : (state.petition !== false ?
         <div className={`share__info--wrapper ${state.urlAPI === '' ? 'hidden' : ''}`}>
           <p className="share__paragraph">La tarjeta ha sido creada:</p>
           <a className="share__link--cards link" href={`${state.urlAPI}`}>{state.urlAPI}</a>
@@ -42,7 +42,7 @@ class Share extends React.Component {
             Compartir en twitter
           </a>
         </div> :
-        <p>Error</p>)
+        <p>Ha habido un error al cargar la tarjeta.</p>)
         }
       </React.Fragment>
     );

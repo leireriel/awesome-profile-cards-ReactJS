@@ -34,7 +34,7 @@ class App extends React.Component {
       isAvatarDefault: true,
       urlAPI: '',
       loading: false,
-      fetch: false
+      petition: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -145,7 +145,7 @@ class App extends React.Component {
     .catch(error => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
       this.setState({
-        fetch: true
+        petition: false
       });
     });
   }
