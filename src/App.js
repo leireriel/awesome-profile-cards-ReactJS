@@ -99,7 +99,8 @@ class App extends React.Component {
     this.setState((prevState, props) => {
       return {
         userInfo: this.state.userDefault,
-        isAvatarDefault: true
+        isAvatarDefault: true,
+        isVisible: 'design'
       };
     });
   }
