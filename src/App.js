@@ -32,7 +32,9 @@ class App extends React.Component {
       },
       isVisible: 'design',
       isAvatarDefault: true,
-      urlAPI: ''
+      urlAPI: '',
+      loading: false,
+      fetch: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -128,13 +130,23 @@ class App extends React.Component {
   }
 
   fetchNewCard(event) {
+    this.setState({
+      loading: true
+    });
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
     event.preventDefault();
-    fetchCard(getItem).then(data => {
+    fetchCard(getItem)
+    .then(data => {
       this.setState({
         urlAPI: data.cardURL
       });
       this.createTweet(data.cardURL);
+    })
+    .catch(error => {
+      console.log('Hubo un problema con la petición Fetch:' + error.message);
+      this.setState({
+        fetch: true
+      });
     });
   }
 
