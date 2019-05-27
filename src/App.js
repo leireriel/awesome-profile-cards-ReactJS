@@ -5,7 +5,6 @@ import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
 import { fetchCard } from './Services/fetchCard';
-// import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -99,7 +98,8 @@ class App extends React.Component {
     this.setState((prevState, props) => {
       return {
         userInfo: this.state.userDefault,
-        isAvatarDefault: true
+        isAvatarDefault: true,
+        urlAPI: ''
       };
     });
   }
