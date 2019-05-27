@@ -18,7 +18,7 @@ class Share extends React.Component {
             </p>
             <div className="arrow-wrapper container-arrow">
               <i className=
-                {`${state.isVisible === 'share' ? 'fas fa-chevron-down' : 'fas fa-chevron-up'}`}
+                {`${state.isVisible === 'share' ? 'fas fa-chevron-up' : 'fas fa-chevron-down'}`}
               />
             </div>
           </div>
