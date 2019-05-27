@@ -1,5 +1,5 @@
 .preview {
-    height: 457px;
+    //height: 457px;
     background: linear-gradient(to bottom, #bfcdd0, #dde9ed);
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
         margin: 20px 0 20px 0;
         width: 100vw;
     }
-   
+
 }
 
 .preview__card {
@@ -19,8 +19,9 @@
     margin: 0 15px 0 25px;
     padding: 88px 0 40px 0;
     @media all and (min-width: 768px){
-        padding: 223px 0 260px 0;
+        padding: 223px 0 180px 0;
     }
+
 }
 
 .preview__card--top {
@@ -153,7 +154,7 @@
     .preview__card--text {
     border-left: solid 5px #e95626;
 }
-   
+
     .sm {
         border: 2px solid #e95626;
     }
@@ -173,7 +174,7 @@
     .preview__card--text {
         border-left: solid 5px #a0c0cf;
     }
-   
+
     .sm {
         border: 2px solid #a0c0cf;
     }
@@ -201,7 +202,7 @@
 }
 .hidden {
     display: none;
-    
+
 }
 
 .js-container-hidden {
