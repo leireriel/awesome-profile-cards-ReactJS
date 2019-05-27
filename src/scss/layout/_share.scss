@@ -19,7 +19,12 @@
 .share__btn--create {
   width: 199px;
   height: 50px;
-  @include share_btn_create; 
+  @include share_btn_create;
+  &:hover {
+    top: 1px;
+    box-shadow: 0 5px gray;
+    position: relative;
+  }
 }
 
 .share__btn--create:active {
@@ -41,13 +46,13 @@
   justify-content: space-between;
   cursor: pointer;
   transition: all 0.2s;
- 
+
 }
 .arrow-wrapper {
   display: flex;
   align-items: center;
   color: #54585a;
-  z-index: 99999; 
+  z-index: 99999;
 }
 .share__arrow {
   width: 16px;
@@ -62,7 +67,7 @@
   align-items: center;
   padding-bottom: 30px;
   text-align: center;
-  @include share_info_wrapper; 
+  @include share_info_wrapper;
 
 }
 .share__paragraph {
