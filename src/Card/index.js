@@ -7,6 +7,7 @@ import Fill from './Components/Fill';
 import Share from './Components/Share';
 import { Link } from 'react-router-dom';
 
+
 class Card extends React.Component {
   render() {
     const {
@@ -58,7 +59,9 @@ class Card extends React.Component {
                 />
               </fieldset>
               <fieldset className="share__section">
-                <Share state={state} collapse={collapse} actionShare={actionShare}/>
+                <Share state={state} collapse={collapse} actionShare={actionShare}
+              />
+
               </fieldset>
             </form>
             <PreviewCard action={action} userInfo={userInfo} reset={reset} />
