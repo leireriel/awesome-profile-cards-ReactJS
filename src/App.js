@@ -34,7 +34,7 @@ class App extends React.Component {
       isAvatarDefault: true,
       urlAPI: '',
       loading: false,
-      petition: false
+      petition: true
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -101,13 +101,18 @@ class App extends React.Component {
       return {
         userInfo: this.state.userDefault,
         isAvatarDefault: true,
-        urlAPI: ''
+        urlAPI: '',
+        petition: true
       };
     });
   }
 
   handleCollapsable(e) {
     const newVisible = e.currentTarget.getAttribute('data-id');
+    this.setState({
+      petition: true,
+      urlAPI: ''
+    })
     this.setState((prevState, props) => {
       if (newVisible === prevState.isVisible) {
         return { isVisible: null };
@@ -131,7 +136,8 @@ class App extends React.Component {
 
   fetchNewCard(event) {
     this.setState({
-      loading: true
+      loading: true,
+      petition: true
     });
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
     event.preventDefault();
@@ -145,7 +151,8 @@ class App extends React.Component {
     .catch(error => {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
       this.setState({
-        petition: false
+        petition: false,
+        loading: false
       });
     });
   }
