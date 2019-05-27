@@ -47,13 +47,15 @@ class Fill extends React.Component {
           </div>
           <h2 className="fill__title">Rellena</h2>
           <div className="fill__container_img-arrcontainer-arrow">
-            <i className="fas fa-chevron-up fill__img-arrow" />
+            <i className=
+              {`fill__img-arrow ${state.isVisible === 'fill' ? 'fas fa-chevron-down' : 'fas fa-chevron-up'}`}
+            />
           </div>
         </div>
         <div
           className={`fill__form ${
             state.isVisible === 'fill' ? '' : 'js-container-panel'
-          }`}
+            }`}
         >
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">

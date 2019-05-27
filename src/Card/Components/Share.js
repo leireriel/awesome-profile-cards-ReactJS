@@ -16,13 +16,15 @@ class Share extends React.Component {
               <i className="share__icon fas fa-share-alt" /> comparte
             </p>
             <div className="arrow-wrapper container-arrow">
-              <i className="fas fa-chevron-up" />
+              <i className=
+                {`${state.isVisible === 'share' ? 'fas fa-chevron-up' : 'fas fa-chevron-down'}`}
+              />
             </div>
           </div>
           <div
             className={`share__btn--wrapper ${
               state.isVisible === 'share' ? '' : 'js-container-panel'
-            }`}
+              }`}
           >
             <button type="submit" className="share__btn--create" onClick={actionShare}>
               <i className="far fa-address-card" />
