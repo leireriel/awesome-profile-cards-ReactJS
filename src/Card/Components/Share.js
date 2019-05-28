@@ -33,14 +33,33 @@ class Share extends React.Component {
             </button>
           </div>
         </div>
-        <div className={`share__info--wrapper ${state.urlAPI === '' ? 'hidden' : ''}`}>
-          <p className="share__paragraph">La tarjeta ha sido creada:</p>
-          <a className="share__link--cards link" href={`${state.urlAPI}`}>{state.urlAPI}</a>
-          <a className="share__btn--twitter link" href="#Crear">
-            <i className="fab fa-twitter" />
-            Compartir en twitter
-          </a>
-        </div>
+        {state.urlAPI === '' && state.shareButton === 'clicked' ?
+          <p>Cargando...</p>
+          :
+          null
+        }
+        {state.urlError !== '' ?
+          <div>
+            <p className="error__message">
+              Ups!<span>
+                <img src="" alt="" />💀
+                </span> Rellena los campos obligatorios <span>
+                <img src="" alt="" />💀
+                </span>
+            </p>
+          </div>
+          :
+          <div className={`share__info--wrapper ${state.urlAPI === '' ? 'hidden' : ''}`}>
+            <React.Fragment>
+              <p className="share__paragraph">La tarjeta ha sido creada:</p>
+              <a className="share__link--cards link" href={`${state.urlAPI}`}>{state.urlAPI}</a>
+              <a className="share__btn--twitter link" href="#Crear">
+                <i className="fab fa-twitter" />
+                Compartir en twitter
+              </a>
+            </React.Fragment>
+          </div>
+        }
       </React.Fragment>
     );
   }
