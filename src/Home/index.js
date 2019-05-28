@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Logo from '../Components/Images/logo_GameOfCodes.svg';
+import Logo from '../Components/Images/logo_Gorka.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
 import LogoHome from './Components/LogoHome';
 import TitleHome from './Components/TitleHome';
