@@ -1,219 +1,215 @@
 .preview {
-    //height: 457px;
-    background: linear-gradient(to bottom, #bfcdd0, #dde9ed);
-    display: flex;
-    justify-content: center;
-
-    @media all and (min-width: 768px){
-        border-radius: 6px;
-        height: auto;
-        margin: 20px 0 20px 0;
-        width: 100vw;
-    }
-
+  //height: 457px;
+  background: linear-gradient(to bottom, #bfcdd0, #dde9ed);
+  display: flex;
+  justify-content: center;
+  @media all and (min-width: 768px){
+    border-radius: 6px;
+    height: auto;
+    margin: 20px 0 20px 0;
+    width: 100vw;
+  }
 }
 
 .preview__card {
-    width: 240px;
-    height: 329px;
-    margin: 0 15px 0 25px;
-    padding: 88px 0 40px 0;
-    @media all and (min-width: 768px){
-        padding: 223px 0 180px 0;
-    }
+  width: 240px;
+  height: 329px;
+  margin: 0 15px 0 25px;
+  padding: 88px 0 40px 0;
+  @media all and (min-width: 768px){
+    padding: 223px 0 180px 0;
+  }
 }
 
 .preview__card--top {
-    width: 240px;
-    background: #ffffff;
-    position: relative;
-    display: flex;
-    align-items: center;
+  width: 240px;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .preview__card--text {
-    background: white;
-    border-left: solid 5px $color-hospital-green;
-    padding-right: 25px;
-    margin-top: 21px;
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    max-width: 100%;
-    box-sizing: border-box;
+  background: white;
+  border-left: solid 5px $color-hospital-green;
+  padding-right: 25px;
+  margin-top: 21px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .preview--h2 {
-    color: $color-dark-blue;
-    text-transform: capitalize;
-    font-family: $font-card;
-    font-weight: 700;
-    font-size: 18px;
-    margin: 0 0 0 20px;
+  color: $color-dark-blue;
+  text-transform: capitalize;
+  font-family: $font-card;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 0 20px;
 }
 
 .preview--h3 {
-    color: $color-dark-grey;
-    font-family: $font-card;
-    font-weight: 400;
-    font-size: 16px;
-    padding-top: 4px;
-    margin: 0 0 0 20px;
+  color: $color-dark-grey;
+  font-family: $font-card;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 4px;
+  margin: 0 0 0 20px;
 }
 
 .preview--h3:first-letter {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .preview__reset {
-    width: 75px;
-    height: 30px;
-    background-color: transparent;
-    border: 1px solid $color-white;
-    border-radius: 15px;
-    text-align: center;
-    position: absolute;
-    top: -50px;
-    cursor: pointer;
+  width: 75px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  border-radius: 15px;
+  text-align: center;
+  position: absolute;
+  top: -50px;
+  cursor: pointer;
 }
 
 .preview__trash {
-    color: $color-dark-grey;
-    text-transform: uppercase;
-    font-family: $font-default;
-    font-weight: 400;
-    font-size: 12px;
-    padding: 0;
-    margin: 0;
-    &:hover{
-      color: red;
-      font-weight: bold;
-      font-size: 14px;
-    }
+  color: $color-dark-grey;
+  text-transform: uppercase;
+  font-family: $font-default;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  &:hover{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+  }
 }
 
 .preview__card--image {
-    width: 240px;
-    height: 200px;
-    background: #ffffff;
-    //background-image: url('https://placehold.it/240x200');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 2px;
+  width: 240px;
+  height: 200px;
+  background: #ffffff;
+  //background-image: url('https://placehold.it/240x200');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px;
 }
 
 .preview__card--bottom {
-    width: 240px;
-    height: 54px;
-    background: #ffffff;
-    position: relative;
+  width: 240px;
+  height: 54px;
+  background: #ffffff;
+  position: relative;
 }
 
 .preview__card--sm {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: absolute;
-    top: 10px;
-    left: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 20px;
 }
+
 //circulo
 .sm {
-    width: 32px;
-    height: 32px;
-    box-sizing: border-box;
-    border: 2px solid $color-hospital-green;
-    border-radius: 16px;
-    margin: 0 10px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 2px solid $color-hospital-green;
+  border-radius: 16px;
+  margin: 0 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 //icono
 .sm-link {
-    text-decoration: none;
-    color: $color-dark-blue;
-    overflow: hidden;
-    position: relative;
+  text-decoration: none;
+  color: $color-dark-blue;
+  overflow: hidden;
+  position: relative;
 }
 
 .image-access {
-    display: none;
+  display: none;
 }
 
 .access {
-    position: absolute;
+  position: absolute;
 }
 
 //nuevas clases para JS palette
 
 .preview-red {
-    .preview--h2 {
-        color: #420101;
-    }
-    .preview--h3 {
-        color: #bd1010;
-    }
-    .preview__card--text {
+  .preview--h2 {
+    color: #420101;
+  }
+  .preview--h3 {
+    color: #bd1010;
+  }
+  .preview__card--text {
     border-left: solid 5px #e95626;
-}
-
-    .sm {
-        border: 2px solid #e95626;
-    }
-    .sm-link {
-        color: #420101;
-    }
+  }
+  .sm {
+    border: 2px solid #e95626;
+  }
+  .sm-link {
+    color: #420101;
+  }
 }
 
 .preview-grey {
-    .preview--h2 {
-        color: #3e5b65;
-    }
-    .preview--h3 {
-        color: #dfe5eb;
-    }
-
-    .preview__card--text {
-        border-left: solid 5px #a0c0cf;
-    }
-
-    .sm {
-        border: 2px solid #a0c0cf;
-    }
-    .sm-link {
-        color: #3e5b65;
-    }
+  .preview--h2 {
+    color: #3e5b65;
+  }
+  .preview--h3 {
+    color: #dfe5eb;
+  }
+  .preview__card--text {
+    border-left: solid 5px #a0c0cf;
+  }
+  .sm {
+    border: 2px solid #a0c0cf;
+  }
+  .sm-link {
+    color: #3e5b65;
+  }
 }
 
 .preview-default {
-    .preview--h2 {
-        color: $color-dark-blue;
-    }
-    .preview--h3 {
-        color: $color-dark-grey;
-    }
-    .preview__card--text {
-        border-left: solid 5px $color-hospital-green;
-    }
-    .sm {
-        border: 2px solid $color-hospital-green;
-    }
-    .sm-link {
-        color: $color-dark-blue;
-    }
+  .preview--h2 {
+    color: $color-dark-blue;
+  }
+  .preview--h3 {
+    color: $color-dark-grey;
+  }
+  .preview__card--text {
+    border-left: solid 5px $color-hospital-green;
+  }
+  .sm {
+    border: 2px solid $color-hospital-green;
+  }
+  .sm-link {
+    color: $color-dark-blue;
+  }
 }
-.hidden {
-    display: none;
 
+.hidden {
+  display: none;
 }
 
 .js-container-hidden {
-    .js-container-panel{
-        display: none;
-    }
-    .container-arrow{
-        transform: rotate(180deg);
-    }
+  .js-container-panel{
+    display: none;
+  }
+  .container-arrow{
+    transform: rotate(180deg);
+  }
 }
