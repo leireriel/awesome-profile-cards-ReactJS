@@ -11,8 +11,9 @@ Este proyecto ha sido realizado con el framework React ⚛️ y los estilos han 
 Sigue estos pasos si quieres tener una copia del proyecto: 
 
 1. Clona el repositorio del proyecto. 
-2. Ejecuta el proyecto en el navegador con `npm start`.
-3. ¡ Listo !
+2. Ejecuta `npm install` para instalar todas las librerías utilizadas.
+3. Visualiza el proyecto en el navegador con `npm start`.
+4. ¡ Listo !
 
 ## 🛠 Construido con
 * [React](https://reactjs.org/) - Framework de JavaScript
