@@ -30,7 +30,7 @@ class PreviewCard extends React.Component {
           <div className="preview__card--top">
             <button type="reset" className="preview__reset" onClick={reset}>
               <p className="preview__trash">
-                <i className="far fa-trash-alt" /> reset
+                <i className="fas fa-recycle" /> reset
               </p>
             </button>
             <div className="preview__card--text">
