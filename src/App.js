@@ -103,7 +103,8 @@ class App extends React.Component {
         isAvatarDefault: true,
         urlError: '',
         urlAPI: '',
-        shareButton: ''
+        shareButton: '',
+        isVisible: 'design'
       };
     });
   }
@@ -144,8 +145,15 @@ class App extends React.Component {
       this.createTweet(data.cardURL);
       if (data.success === false) {
         this.setState({
-          urlError: data.error
+          urlError: data.error,
         })
+        setTimeout(()=>
+        this.setState({
+          isVisible: 'fill',
+          urlError: '',
+          urlAPI: '',
+          shareButton: '',
+        }), 2000)
       }
     });
   }

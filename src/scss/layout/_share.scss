@@ -61,6 +61,12 @@
   color: #54585a;
 }
 
+.error__container{
+  text-align: center;
+  font-family: $font-default;
+  font-size: 18px;
+}
+
 .share__info--wrapper {
   display: flex;
   flex-direction: column;
@@ -101,4 +107,8 @@
 }
 .fa-address-card {
   padding-right: 8px;
+}
+
+.loader{
+  text-align: center;
 }
