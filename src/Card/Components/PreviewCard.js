@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import userProfile from './userProfile';
-// const { name, job } = this.state;
 
 class PreviewCard extends React.Component {
-
-  // componentWillUnmount() {
-  //   this.handleReset();
-  // }
-
   render() {
     const {
       name,

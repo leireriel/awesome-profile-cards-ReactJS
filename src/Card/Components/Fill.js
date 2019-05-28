@@ -61,8 +61,7 @@ class Fill extends React.Component {
         <div
           className={`fill__form ${
             state.isVisible === 'fill' ? '' : 'js-container-panel'
-            }`}
-        >
+            }`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *
@@ -193,5 +192,4 @@ Fill.propTypes={
   isAvatarDefault: PropTypes.bool
 }
 
-// Faltan las proptypes del componente de carlos
 export default Fill;

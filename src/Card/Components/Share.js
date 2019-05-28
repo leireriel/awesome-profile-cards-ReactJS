@@ -27,8 +27,7 @@ class Share extends React.Component {
           <div
             className={`share__btn--wrapper ${
               state.isVisible === 'share' ? '' : 'js-container-panel'
-              }`}
-          >
+              }`}>
             <button type="submit" className="share__btn--create" onClick={actionShare}>
               <i className="far fa-address-card" />
               Crear tarjeta
@@ -50,7 +49,7 @@ class Share extends React.Component {
         {state.urlError !== '' ?
           <div className="error__container">
             <p className="error__message">
-              Ups!<span>
+              ¡Ups!<span>
                 <img src="" alt="" />💀
                 </span> Rellena los campos obligatorios <span>
                 <img src="" alt="" />💀
