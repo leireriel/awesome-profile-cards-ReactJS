@@ -1,5 +1,4 @@
 import React from 'react';
-
 class Share extends React.Component {
   render() {
     const { state, collapse, actionShare } = this.props;

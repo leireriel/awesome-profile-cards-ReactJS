@@ -5,7 +5,6 @@ import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
 import { fetchCard } from './Services/fetchCard';
-// import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
   constructor(props) {
