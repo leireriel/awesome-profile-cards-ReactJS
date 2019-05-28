@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Fill extends React.Component {
   constructor(props) {
@@ -32,7 +33,12 @@ class Fill extends React.Component {
   }
 
   render() {
-    const { action, userInfo, state, collapse, isAvatarDefault } = this.props;
+    const {
+      action,
+      userInfo,
+      state,
+      collapse,
+      isAvatarDefault } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -178,5 +184,14 @@ class Fill extends React.Component {
     );
   }
 }
+Fill.propTypes={
+  action: PropTypes.func,
+  collapse: PropTypes.func,
+  updateAvatar: PropTypes.func,
+  userInfo: PropTypes.object,
+  state: PropTypes.object,
+  isAvatarDefault: PropTypes.bool
+}
+
 // Faltan las proptypes del componente de carlos
 export default Fill;

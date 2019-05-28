@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Design extends React.Component {
   render() {
-    const { actionPalettes, state, collapse } = this.props;
+    const {
+      actionPalettes,
+      state,
+      collapse
+    } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -123,4 +128,9 @@ class Design extends React.Component {
   }
 }
 
+Design.propTypes={
+  actionPalettes: PropTypes.func,
+  state: PropTypes.object,
+  collapse: PropTypes.func
+}
 export default Design;

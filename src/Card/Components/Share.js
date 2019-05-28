@@ -1,5 +1,7 @@
 import React from 'react';
 import Loader from 'react-loader-spinner'
+import PropTypes from 'prop-types';
+
 class Share extends React.Component {
   render() {
     const { state, collapse, actionShare } = this.props;
@@ -70,6 +72,12 @@ class Share extends React.Component {
       </React.Fragment>
     );
   }
+}
+
+Share.propTypes={
+  state: PropTypes.object,
+  collapse: PropTypes.func,
+  actionShare: PropTypes.func
 }
 
 export default Share;
