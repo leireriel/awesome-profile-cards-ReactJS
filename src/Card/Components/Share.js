@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from 'react-loader-spinner'
 class Share extends React.Component {
   render() {
     const { state, collapse, actionShare } = this.props;
@@ -33,12 +34,19 @@ class Share extends React.Component {
           </div>
         </div>
         {state.urlAPI === '' && state.shareButton === 'clicked' ?
-          <p>Cargando...</p>
+        <div className="loader">
+          <Loader
+            type="ThreeDots"
+            color="#9c9c9c"
+            height="50"
+            width="50"
+          />
+        </div>
           :
           null
         }
         {state.urlError !== '' ?
-          <div>
+          <div className="error__container">
             <p className="error__message">
               Ups!<span>
                 <img src="" alt="" />💀
