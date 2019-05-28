@@ -32,7 +32,9 @@ class App extends React.Component {
       },
       isVisible: 'design',
       isAvatarDefault: true,
-      urlAPI: ''
+      urlAPI: '',
+      shareButton: '',
+      urlError: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -99,7 +101,9 @@ class App extends React.Component {
       return {
         userInfo: this.state.userDefault,
         isAvatarDefault: true,
-        urlAPI: ''
+        urlError: '',
+        urlAPI: '',
+        shareButton: ''
       };
     });
   }
@@ -128,6 +132,9 @@ class App extends React.Component {
   }
 
   fetchNewCard(event) {
+    this.setState({
+      shareButton: 'clicked'
+    });
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
     event.preventDefault();
     fetchCard(getItem).then(data => {
@@ -135,11 +142,15 @@ class App extends React.Component {
         urlAPI: data.cardURL
       });
       this.createTweet(data.cardURL);
+      if (data.success === false) {
+        this.setState({
+          urlError: data.error
+        })
+      }
     });
   }
 
   render() {
-    console.log('obj', this.state);
     return (
       <React.Fragment>
         <Switch>

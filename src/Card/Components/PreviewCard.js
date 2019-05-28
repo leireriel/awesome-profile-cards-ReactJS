@@ -3,6 +3,11 @@ import React from 'react';
 // const { name, job } = this.state;
 
 class PreviewCard extends React.Component {
+
+  // componentWillUnmount() {
+  //   this.handleReset();
+  // }
+
   render() {
     const {
       name,
