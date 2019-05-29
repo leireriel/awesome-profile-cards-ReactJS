@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Fill extends React.Component {
   constructor(props) {
@@ -32,7 +33,12 @@ class Fill extends React.Component {
   }
 
   render() {
-    const { action, userInfo, state, collapse, isAvatarDefault } = this.props;
+    const {
+      action,
+      userInfo,
+      state,
+      collapse,
+      isAvatarDefault } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -55,8 +61,7 @@ class Fill extends React.Component {
         <div
           className={`fill__form ${
             state.isVisible === 'fill' ? '' : 'js-container-panel'
-            }`}
-        >
+            }`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *
@@ -178,5 +183,13 @@ class Fill extends React.Component {
     );
   }
 }
-// Faltan las proptypes del componente de carlos
+Fill.propTypes={
+  action: PropTypes.func,
+  collapse: PropTypes.func,
+  updateAvatar: PropTypes.func,
+  userInfo: PropTypes.object,
+  state: PropTypes.object,
+  isAvatarDefault: PropTypes.bool
+}
+
 export default Fill;

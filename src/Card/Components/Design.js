@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Design extends React.Component {
   render() {
-    const { actionPalettes, state, collapse } = this.props;
+    const {
+      actionPalettes,
+      state,
+      collapse
+    } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de diseña</legend>
@@ -22,14 +27,12 @@ class Design extends React.Component {
           </div>
         </div>
         <div className=
-          // "design__container__form js-container-panel"
           {`design__container__form ${state.isVisible === 'design' ? '' : 'hidden'}`}
         >
           <h3 className="design__subtitle">COLORES</h3>
           <div>
             <ul className="desing__colors-list">
               <li className="design__form design__form-blue">
-                {/* esta clase revisar */}
                 <label className="hide" htmlFor="blue_palette">
                   blue palette
               </label>
@@ -58,7 +61,6 @@ class Design extends React.Component {
                 </ul>
               </li>
               <li className="design__form design__form-red">
-                {/* revis */}
                 <label className="hide" htmlFor="red_palette">
                   Red palette
               </label>
@@ -87,7 +89,6 @@ class Design extends React.Component {
                 </ul>
               </li>
               <li className="design__form design__form-grey">
-                {/* revisar */}
                 <label className="hide" htmlFor="grey_palette">
                   grey palette
               </label>
@@ -121,6 +122,12 @@ class Design extends React.Component {
       </React.Fragment>
     );
   }
+}
+
+Design.propTypes={
+  actionPalettes: PropTypes.func,
+  state: PropTypes.object,
+  collapse: PropTypes.func
 }
 
 export default Design;
