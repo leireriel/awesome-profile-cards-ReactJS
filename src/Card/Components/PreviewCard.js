@@ -1,13 +1,7 @@
 import React from 'react';
-// import userProfile from './userProfile';
-// const { name, job } = this.state;
+import PropTypes from 'prop-types';
 
 class PreviewCard extends React.Component {
-
-  // componentWillUnmount() {
-  //   this.handleReset();
-  // }
-
   render() {
     const {
       name,
@@ -88,5 +82,11 @@ class PreviewCard extends React.Component {
     );
   }
 }
-// Faltan proptypes del componente profile de subir la foto de carlos
+
+PreviewCard.propTypes={
+  action: PropTypes.func,
+  userInfo: PropTypes.object,
+  reset: PropTypes.func
+}
+
 export default PreviewCard;

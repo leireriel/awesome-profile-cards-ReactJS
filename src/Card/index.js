@@ -6,6 +6,7 @@ import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
@@ -65,7 +66,9 @@ class Card extends React.Component {
                 />
               </fieldset>
             </form>
-            <PreviewCard action={action} userInfo={userInfo} reset={reset} />
+            <PreviewCard
+            action={action} userInfo={userInfo} reset={reset}
+            />
           </div>
         </main>
         <footer className="card__footer">
@@ -91,5 +94,17 @@ class Card extends React.Component {
     );
   }
 }
+
+Card.propTypes = {
+  action: PropTypes.func,
+  actionPalettes: PropTypes.func,
+  actionShare: PropTypes.func,
+  reset: PropTypes.func,
+  collapse: PropTypes.func,
+  updateAvatar:PropTypes.func,
+  userInfo: PropTypes.object,
+  state: PropTypes.object,
+  isAvatarDefault: PropTypes.bool
+};
 
 export default Card;
