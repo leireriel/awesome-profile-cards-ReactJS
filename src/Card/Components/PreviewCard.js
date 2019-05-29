@@ -84,7 +84,6 @@ class PreviewCard extends React.Component {
 }
 
 PreviewCard.propTypes={
-  action: PropTypes.func,
   userInfo: PropTypes.object,
   reset: PropTypes.func
 }
