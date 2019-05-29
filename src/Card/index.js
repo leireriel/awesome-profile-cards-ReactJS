@@ -1,11 +1,12 @@
 import React from 'react';
-import Logo from '../Components/Images/logo_GameOfCodes.svg';
+import Logo from '../Components/Images/logo_Gorka.svg';
 import LogoAdalab from '../Components/Images/logo-adalab-80px.png';
 import PreviewCard from './Components/PreviewCard';
 import Design from './Components/Design';
 import Fill from './Components/Fill';
 import Share from './Components/Share';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
@@ -58,10 +59,16 @@ class Card extends React.Component {
                 />
               </fieldset>
               <fieldset className="share__section">
-                <Share state={state} collapse={collapse} actionShare={actionShare}/>
+                <Share
+                  state={state}
+                  collapse={collapse}
+                  actionShare={actionShare}
+                />
               </fieldset>
             </form>
-            <PreviewCard action={action} userInfo={userInfo} reset={reset} />
+            <PreviewCard
+            action={action} userInfo={userInfo} reset={reset}
+            />
           </div>
         </main>
         <footer className="card__footer">
@@ -87,5 +94,17 @@ class Card extends React.Component {
     );
   }
 }
+
+Card.propTypes = {
+  action: PropTypes.func,
+  actionPalettes: PropTypes.func,
+  actionShare: PropTypes.func,
+  reset: PropTypes.func,
+  collapse: PropTypes.func,
+  updateAvatar:PropTypes.func,
+  userInfo: PropTypes.object,
+  state: PropTypes.object,
+  isAvatarDefault: PropTypes.bool
+};
 
 export default Card;

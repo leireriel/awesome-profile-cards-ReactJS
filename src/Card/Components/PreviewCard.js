@@ -1,6 +1,5 @@
 import React from 'react';
-// import userProfile from './userProfile';
-// const { name, job } = this.state;
+import PropTypes from 'prop-types';
 
 class PreviewCard extends React.Component {
   render() {
@@ -25,7 +24,7 @@ class PreviewCard extends React.Component {
           <div className="preview__card--top">
             <button type="reset" className="preview__reset" onClick={reset}>
               <p className="preview__trash">
-                <i className="far fa-trash-alt" /> reset
+                <i className="fas fa-recycle" /> reset
               </p>
             </button>
             <div className="preview__card--text">
@@ -83,5 +82,10 @@ class PreviewCard extends React.Component {
     );
   }
 }
-// Faltan proptypes del componente profile de subir la foto de carlos
+
+PreviewCard.propTypes={
+  userInfo: PropTypes.object,
+  reset: PropTypes.func
+}
+
 export default PreviewCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Fill extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Fill extends React.Component {
     this.myFileField.current.click();
   }
 
-  uploadImage(e){
+  uploadImage(e) {
     const myFile = e.currentTarget.files[0];
     this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
@@ -28,11 +29,16 @@ class Fill extends React.Component {
   }
 
   getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+    return !isDefault ? { backgroundImage: `url(${image})` } : {};
   }
 
   render() {
-    const { action, userInfo, state, collapse, isAvatarDefault } = this.props;
+    const {
+      action,
+      userInfo,
+      state,
+      collapse,
+      isAvatarDefault } = this.props;
     return (
       <React.Fragment>
         <legend className="hide">Sección de rellena</legend>
@@ -40,16 +46,22 @@ class Fill extends React.Component {
           className="fill__container-title js-container-title"
           id="fill"
           onClick={collapse}
-          data-id="fill">
+          data-id="fill"
+        >
           <div className="fill__container_img-keyboard">
             <i className="far fa-keyboard fill__img-keyboard" />
           </div>
           <h2 className="fill__title">Rellena</h2>
           <div className="fill__container_img-arrcontainer-arrow">
-            <i className="fas fa-chevron-up fill__img-arrow" />
+            <i className=
+              {`fill__img-arrow ${state.isVisible === 'fill' ? 'fas fa-chevron-down' : 'fas fa-chevron-up'}`}
+            />
           </div>
         </div>
-        <div className={`fill__form ${state.isVisible === 'fill' ? '' : 'js-container-panel'}`}>
+        <div
+          className={`fill__form ${
+            state.isVisible === 'fill' ? '' : 'js-container-panel'
+            }`}>
           <div className="form__container-name">
             <label className="form_title" htmlFor="name">
               Nombre completo *
@@ -94,13 +106,17 @@ class Fill extends React.Component {
               required
             />
             <div className="form__container-btn">
-              <button type="button" className="form__btn js__profile-trigger"
-              onClick={this.handleFilePicker}>
+              <button
+                type="button"
+                className="form__btn js__profile-trigger"
+                onClick={this.handleFilePicker}
+              >
                 Añadir imagen
               </button>
-              <div className="form__photo-preview js__profile-preview"
-              style={this.getPreview(isAvatarDefault, userInfo.photo)}
-               />
+              <div
+                className="form__photo-preview js__profile-preview"
+                style={this.getPreview(isAvatarDefault, userInfo.photo)}
+              />
             </div>
           </div>
           <div className="form__container-email">
@@ -167,5 +183,13 @@ class Fill extends React.Component {
     );
   }
 }
-// Faltan las proptypes del componente de carlos
+Fill.propTypes={
+  action: PropTypes.func,
+  collapse: PropTypes.func,
+  updateAvatar: PropTypes.func,
+  userInfo: PropTypes.object,
+  state: PropTypes.object,
+  isAvatarDefault: PropTypes.bool
+}
+
 export default Fill;

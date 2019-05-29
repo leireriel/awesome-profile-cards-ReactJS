@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class IconsHome extends React.Component{
   render() {
@@ -20,6 +21,12 @@ class IconsHome extends React.Component{
       </ul>
     );
   }
+}
+
+IconsHome.propTypes={
+  design: PropTypes.string,
+  fill: PropTypes.string,
+  share: PropTypes.string
 }
 
 export default IconsHome;

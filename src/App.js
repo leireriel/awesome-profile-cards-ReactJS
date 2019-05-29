@@ -5,7 +5,6 @@ import Home from './Home/index';
 import Card from './Card/index';
 import userProfile from './Card/Components/userProfile';
 import { fetchCard } from './Services/fetchCard';
-// import { fetchCard } from './Services/fetchCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +32,9 @@ class App extends React.Component {
       },
       isVisible: 'design',
       isAvatarDefault: true,
-      urlAPI: ''
+      urlAPI: '',
+      shareButton: '',
+      urlError: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalettes = this.handlePalettes.bind(this);
@@ -53,7 +54,7 @@ class App extends React.Component {
       });
       if (getItem.photo !== null) {
         this.setState({
-          isAvatarDefault: false
+          isAvatarDefault: true
         });
       }
     }
@@ -99,20 +100,24 @@ class App extends React.Component {
     this.setState((prevState, props) => {
       return {
         userInfo: this.state.userDefault,
-        isAvatarDefault: true
-      }; //REVISAR
+        isAvatarDefault: true,
+        urlError: '',
+        urlAPI: '',
+        shareButton: '',
+        isVisible: 'design'
+      };
     });
   }
 
   handleCollapsable(e) {
     const newVisible = e.currentTarget.getAttribute('data-id');
     this.setState((prevState, props) => {
-      if(newVisible === prevState.isVisible){
-        return {isVisible: null}
+      if (newVisible === prevState.isVisible) {
+        return { isVisible: null };
       } else {
         return {
           isVisible: newVisible
-        }
+        };
       }
     });
   }
@@ -121,25 +126,39 @@ class App extends React.Component {
     const twitterLinkBtn = document.querySelector('.share__btn--twitter');
     const twitterLink = 'https://twitter.com/intent/tweet';
     const hashtags = 'AdalabDigital,adalabers,unicodes,gorkapower';
-    const text = 'Check%20out%20my%20new%20online%20business%20card%20from%20Awesome%20Profile%20Cards!%20';
+    const text =
+      'Check%20out%20my%20new%20online%20business%20card%20from%20Awesome%20Profile%20Cards!%20';
     const tweet = `${twitterLink}?text=${text};hashtags=${hashtags}%20${url}`;
     twitterLinkBtn.href = tweet;
   }
 
   fetchNewCard(event) {
+    this.setState({
+      shareButton: 'clicked'
+    });
     const getItem = JSON.parse(localStorage.getItem('cardSaved'));
     event.preventDefault();
-    fetchCard(getItem)
-      .then(data => {
+    fetchCard(getItem).then(data => {
+      this.setState({
+        urlAPI: data.cardURL
+      });
+      this.createTweet(data.cardURL);
+      if (data.success === false) {
         this.setState({
-          urlAPI: data.cardURL
+          urlError: data.error,
         })
-        this.createTweet(data.cardURL);
-      })
+        setTimeout(()=>
+        this.setState({
+          isVisible: 'fill',
+          urlError: '',
+          urlAPI: '',
+          shareButton: '',
+        }), 2000)
+      }
+    });
   }
 
   render() {
-    console.log('obj', this.state)
     return (
       <React.Fragment>
         <Switch>
